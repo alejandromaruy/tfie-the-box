@@ -1,0 +1,1905 @@
+Base horaria: BD The Box Presentacion 30.08.xlsx 
+
+==============================================================================
+ 1. LECTURA DE LA BASE HORARIA (hoja BD Venta por hora)
+==============================================================================
+Encabezados leidos (deben ser Anio, Semana, Fecha, InicioSemana, Hora,
+ Categoria, Nro Tienda, Tienda, Nombre Tienda, Flujo, Transacciones,
+ Venta, Unds Vendidas):
+ [1] "A<U+00F1>o"    "Semana"        "Fecha"         "InicioSemana"  "Hora"          "Categoria"     "Nro Tienda"   
+ [8] "Tienda"        "Nombre Tienda" "Flujo"         "Transacciones" "Venta"         "Unds Vendidas"
+  [OK     ] Registros del libro (ambas categorias)                         obtenido: 122329.00      esperado: 122329
+  [OK     ] Registros de la categoria The Box                              obtenido: 103790.00      esperado: 103790
+
+==============================================================================
+ 2. CALIDAD DE LOS DATOS (apartado 1.4.4)
+==============================================================================
+  anio filas trx_flujo_cero flujo_h22 trx_h22 flujo_total trx_total conv_bruta pct_trx_flujo_cero
+1 2025 59800           6156       143    2082     1339121     86615 0.06468049         0.07107314
+2 2026 43990           3135        25    1532      951049     64811 0.06814686         0.04837142
+  [OK     ] % transacciones con flujo cero, 2026                           obtenido: 4.8371         esperado: 4.84
+  [OK     ] % transacciones con flujo cero, 2025                           obtenido: 7.1073         esperado: 7.11
+  [OK     ] Hora 22 de 2026: transacciones                                 obtenido: 1532.00        esperado: 1532
+  [OK     ] Hora 22 de 2026: visitas                                       obtenido: 25.00          esperado: 25
+
+==============================================================================
+ 3. MUESTRA DEPURADA (apartado 2.1.1)
+==============================================================================
+  [OK     ] Registros de la muestra depurada                               obtenido: 97834.00       esperado: 97834
+  [OK     ] % de los registros de la categoria                             obtenido: 94.261         esperado: 94.3
+  [OK     ] Conversion 2026 sin depurar (tablero), %                       obtenido: 6.8147         esperado: 6.81
+  [OK     ] Conversion 2026 depurada, %                                    obtenido: 6.4744         esperado: 6.47
+  [OK     ] Sesgo al alza del tablero, pp                                  obtenido: 0.3403         esperado: 0.34
+
+==============================================================================
+ 4. COMPARACION ENTRE FORMATOS, SEMANAS 2 A 34 DE 2026
+==============================================================================
+  tiendas  flujo   trx    venta  unid       conv   ticket      upt       ppu    formato
+1      16 893219 57894 20546688 82844 0.06481501 354.9019 1.430960 248.01661    The Box
+2       3 150864  9733  1726681 20271 0.06451506 177.4048 2.082708  85.17985 Coolbrands
+  [OK     ] The Box: tiendas                                               obtenido: 16.00          esperado: 16
+  [OK     ] The Box: flujo                                                 obtenido: 893219.00      esperado: 893219
+  [OK     ] The Box: conversion, %                                         obtenido: 6.4815         esperado: 6.48
+  [OK     ] The Box: ticket, S/                                            obtenido: 354.9019       esperado: 354.90
+  [OK     ] The Box: UPT                                                   obtenido: 1.43096        esperado: 1.431
+  [OK     ] The Box: precio por unidad, S/                                 obtenido: 248.0166       esperado: 248.02
+  [OK     ] Coolbrands: tiendas                                            obtenido: 3.00           esperado: 3
+  [OK     ] Coolbrands: flujo                                              obtenido: 150864.00      esperado: 150864
+  [OK     ] Coolbrands: conversion, %                                      obtenido: 6.4515         esperado: 6.45
+  [OK     ] Coolbrands: ticket, S/                                         obtenido: 177.4048       esperado: 177.40
+  [OK     ] Coolbrands: UPT                                                obtenido: 2.08271        esperado: 2.083
+  [OK     ] Coolbrands: precio por unidad, S/                              obtenido: 85.1799        esperado: 85.18
+
+==============================================================================
+ 5. COMPARACION INTERANUAL, SEMANAS 2 A 34, DIECISEIS TIENDAS
+==============================================================================
+  anio tiendas  flujo   trx    venta  unid       conv   ticket      upt      ppu
+1 2025      14 703705 39133 10140566 63821 0.05560995 259.1308 1.630874 158.8907
+2 2026      16 893219 57894 20546688 82844 0.06481501 354.9019 1.430960 248.0166
+  [OK     ] Flujo 2025                                                     obtenido: 703705.00      esperado: 703705
+  [OK     ] Conversion 2025, %                                             obtenido: 5.560995       esperado: 5.5610
+  [OK     ] Conversion 2026, %                                             obtenido: 6.481501       esperado: 6.4815
+  [OK     ] Variacion de la conversion, pp                                 obtenido: 0.9205         esperado: 0.92
+  [OK     ] Ticket 2025, S/                                                obtenido: 259.1308       esperado: 259.13
+  [OK     ] UPT 2025                                                       obtenido: 1.630874       esperado: 1.6309
+  [OK     ] UPT 2026                                                       obtenido: 1.430960       esperado: 1.4310
+  [OK     ] Precio por unidad 2025, S/                                     obtenido: 158.8907       esperado: 158.89
+  [OK     ] Venta 2025, S/                                                 obtenido: 10140566.31    esperado: 10140566
+  [OK     ] Venta 2026, S/                                                 obtenido: 20546687.88    esperado: 20546688
+  [OK     ] Crecimiento del flujo, %                                       obtenido: 26.931         esperado: 26.9
+  [OK     ] Crecimiento del ticket, %                                      obtenido: 36.959         esperado: 37.0
+  [OK     ] Variacion de la UPT, %                                         obtenido: -12.258        esperado: -12.3
+  [OK     ] Crecimiento del precio por unidad, %                           obtenido: 56.093         esperado: 56.1
+  [OK     ] Crecimiento de la venta, %                                     obtenido: 102.619        esperado: 102.6
+  [OK     ] Aporte del flujo, %                                            obtenido: 33.771         esperado: 33.8
+  [OK     ] Aporte de la conversion, %                                     obtenido: 21.691         esperado: 21.7
+  [OK     ] Aporte del ticket, %                                           obtenido: 44.538         esperado: 44.5
+
+Tiendas comparables: 14 
+  anio    venta       conv
+1 2025 10140566 0.05560995
+2 2026 18780531 0.06546393
+  anio    venta       conv
+1 2025  9540814 0.05401148
+2 2026 17744655 0.06560826
+  [OK     ] Tiendas comparables                                            obtenido: 14.00          esperado: 14
+  [OK     ] Comparables: crecimiento de la venta, %                        obtenido: 85.202         esperado: 85.2
+  [OK     ] Comparables: conversion 2026, %                                obtenido: 6.546393       esperado: 6.5464
+  [OK     ] Mejora interanual con todas las comparables, pp                obtenido: 0.9854         esperado: 0.99
+  [OK     ] Mejora interanual sin tiendas con ruptura, pp                  obtenido: 1.1597         esperado: 1.16
+
+==============================================================================
+ 6. DESEMPENO POR HORA Y POR DIA, SEMANAS 2 A 34 DE 2026, DIECISEIS TIENDAS
+==============================================================================
+   hora  flujo  trx     venta       part       conv   ticket
+1    10  22662  953  308262.3 0.02537116 0.04205278 323.4651
+2    11  37850 2458  834623.2 0.04237483 0.06494055 339.5538
+3    12  53811 3636 1263749.6 0.06024390 0.06756983 347.5659
+4    13  56905 3927 1376944.6 0.06370778 0.06900975 350.6352
+5    14  58516 3875 1359879.3 0.06551137 0.06622120 350.9366
+6    15  68110 4207 1518125.6 0.07625230 0.06176773 360.8570
+7    16  83426 5267 1882696.3 0.09339927 0.06313380 357.4514
+8    17  99704 6319 2267448.4 0.11162324 0.06337760 358.8303
+9    18 111610 7064 2540518.3 0.12495256 0.06329182 359.6430
+10   19 116608 7238 2552529.3 0.13054805 0.06207121 352.6567
+11   20 108596 7178 2560740.4 0.12157825 0.06609820 356.7485
+12   21  75421 5772 2081170.5 0.08443730 0.07653041 360.5631
+  [OK     ] Participacion del flujo de 18:00 a 20:59, %                    obtenido: 37.708         esperado: 37.7
+  [OK     ] Participacion de las cinco horas de mayor flujo, %             obtenido: 58.210         esperado: 58.2
+  [OK     ] Participacion del flujo de las 10:00, %                        obtenido: 2.5371         esperado: 2.54
+  [OK     ] Conversion de las 10:00, %                                     obtenido: 4.2053         esperado: 4.21
+  [OK     ] Conversion del resto de la jornada, %                          obtenido: 6.5408         esperado: 6.54
+  [OK     ] Segunda hora de menor conversion, %                            obtenido: 6.1768         esperado: 6.18
+  [OK     ] Ticket de las 10:00, S/                                        obtenido: 323.4651       esperado: 323.47
+  dow  flujo   trx   venta      part       conv   ticket
+1   1 100732  6379 2235241 0.1127741 0.06332645 350.4062
+2   2  94049  6238 2183891 0.1052922 0.06632713 350.0948
+3   3  97515  6450 2249001 0.1091726 0.06614367 348.6823
+4   4 107035  7097 2536528 0.1198306 0.06630541 357.4085
+5   5 118002  8133 2876566 0.1321087 0.06892256 353.6906
+6   6 175677 11861 4209680 0.1966785 0.06751595 354.9178
+7   7 200209 11736 4255781 0.2241432 0.05861874 362.6262
+  [OK     ] Tabla por dia: participacion del flujo (7 dias)                obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Tabla por dia: conversion (7 dias)                             obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Tabla por dia: ticket (7 dias)                                 obtenido: 7 de 7         esperado: 7 de 7
+
+==============================================================================
+ 7. DESEMPENO POR TIENDA, SEMANAS 2 A 34 DE 2026 (Anexo B)
+==============================================================================
+       tienda                             nombre_tienda semanas flujo_semanal       conv   ticket      upt cap_II
+1    TB RPCUS                  THE BOX REAL PLAZA CUSCO      33      917.7879 0.08577938 324.5475 1.395689     Si
+2  TB RPPUR 1            THE BOX REAL PLAZA PURUCHUCO 1      33     1208.6061 0.07607060 333.6615 1.382993     Si
+3    TB MPAQP         THE BOX MALL PLAZA AREQUIPA CAYMA      33     1039.4242 0.07559546 319.7156 1.610490     Si
+4     TB PCSI                        THE BOX SAN ISIDRO      33      716.1212 0.07422139 310.7646 1.534208     No
+5     TB MASA         THE BOX MALL AVENTURA SANTA ANITA      33     1056.7879 0.07400929 317.7849 1.326618     Si
+6    TB MAAQP THE BOX MALL AVENTURA AREQUIPA PORONGOCHE      33     1377.0303 0.07096959 345.0358 1.502636     Si
+7    TB MACIX            THE BOX MALL AVENTURA CHICLAYO      33     1850.9394 0.06971071 377.4404 1.670737     Si
+8     TB RBSB               THE BOX LA RAMBLA SAN BORJA      33     1477.3636 0.06957521 300.5970 1.439269     Si
+9     TB RBBR                  THE BOX LA RAMBLA BRASIL      33      975.3030 0.06540314 290.1393 1.432779     Si
+10    TB JPSU                      THE BOX JOCKEY PLAZA      33     4433.8485 0.06443544 396.5343 1.388736     Si
+11   TB MPTRU               THE BOX MALL PLAZA TRUJILLO      33     4576.6970 0.06135826 387.3066 1.358368     Si
+12 TB LMMIR 2                        THE BOX LARCOMAR 2      33     1820.0000 0.06128871 373.6000 1.490084     Si
+13 TB RPCIX 1             THE BOX REAL PLAZA CHICLAYO 1      33     1953.5758 0.05622945 359.8686 1.497379     Si
+14   TB MGCHM               THE BOX MEGA PLAZA CHIMBOTE      29      992.2759 0.05445510 313.2066 1.391832     No
+15   TB MGIND          THE BOX MEGA PLAZA INDEPENDENCIA      33     2193.7576 0.05280824 328.9189 1.201413     Si
+16  TB RPPIU2                THE BOX REAL PLAZA PIURA 2      10     1973.4000 0.04879903 405.9555 1.562825     Si
+  [OK     ] Anexo B: conversion por tienda (16)                            obtenido: 16 de 16       esperado: 16 de 16
+  [OK     ] Anexo B: semanas por tienda (16)                               obtenido: 16 de 16       esperado: 16 de 16
+  [OK     ] Anexo B: flujo semanal por tienda (16)                         obtenido: 16 de 16       esperado: 16 de 16
+  [OK     ] Anexo B: ticket por tienda (16)                                obtenido: 16 de 16       esperado: 16 de 16
+  [OK     ] Anexo B: UPT por tienda (16)                                   obtenido: 16 de 16       esperado: 16 de 16
+  [OK     ] Factor entre la mayor y la menor conversion                    obtenido: 1.7578         esperado: 1.76
+  [OK     ] Red de 16 tiendas: flujo semanal                               obtenido: 27067.24       esperado: 27067
+  [OK     ] Catorce tiendas: flujo semanal                                 obtenido: 25479.12       esperado: 25479
+  [OK     ] Catorce tiendas: ticket, S/                                    obtenido: 357.5177       esperado: 357.52
+  [OK     ] Catorce tiendas: UPT                                           obtenido: 1.42877        esperado: 1.429
+
+==============================================================================
+ 8. RUPTURAS DE MEDICION: SAN ISIDRO
+==============================================================================
+   semana flujo trx     venta       conv
+1       2   769  93 23259.933 0.12093628
+2       3   883  87 23398.763 0.09852775
+3       4   735  66 18008.695 0.08979592
+4       5   714  66 17167.865 0.09243697
+5       6   734  61 15837.034 0.08310627
+6       7   735  68 16980.983 0.09251701
+7       8   497  50 15370.280 0.10060362
+8       9   495  62 16099.712 0.12525253
+9      10   429  41 10350.424 0.09557110
+10     11   431  38  9811.627 0.08816705
+11     12   385  38  8118.382 0.09870130
+12     13   360  49 13828.729 0.13611111
+13     14   249  37  8162.704 0.14859438
+14     15   431  52 17761.670 0.12064965
+15     16   512  71 26485.305 0.13867188
+16     17   483  42 12775.187 0.08695652
+17     18   518  53 22716.153 0.10231660
+18     19   629 104 39011.323 0.16534181
+19     20   655  54 17054.209 0.08244275
+20     21   798  48 18562.966 0.06015038
+21     22  1192  45 14574.610 0.03775168
+22     23  1109  39 11795.305 0.03516682
+23     24  1011  46 19032.585 0.04549951
+24     25  1095  69 20903.458 0.06301370
+25     26  1010  47 17412.746 0.04653465
+26     27   913  39 12356.983 0.04271632
+27     28  1059  40 14952.475 0.03777148
+28     29  1055  62 20164.661 0.05876777
+29     30   946  53 16425.458 0.05602537
+30     31   624  35 11187.848 0.05608974
+31     32   622  33 10588.916 0.05305466
+32     33   776  25 10844.798 0.03221649
+33     34   778  41 14079.372 0.05269923
+            tramo flujo_sem  trx_sem venta_sem       conv
+1  Semanas 2 a 19  554.9444 59.88889  17508.04 0.10791871
+2 Semanas 22 a 34  937.6923 44.15385  14947.63 0.04708778
+  [OK     ] San Isidro, sem. 2-19: flujo semanal                           obtenido: 554.94         esperado: 555
+  [OK     ] San Isidro, sem. 2-19: transacciones                           obtenido: 59.89          esperado: 60
+  [OK     ] San Isidro, sem. 2-19: venta, S/                               obtenido: 17508.04       esperado: 17508
+  [OK     ] San Isidro, sem. 2-19: conversion, %                           obtenido: 10.7919        esperado: 10.79
+  [OK     ] San Isidro, sem. 22-34: flujo semanal                          obtenido: 937.69         esperado: 938
+  [OK     ] San Isidro, sem. 22-34: transacciones                          obtenido: 44.15          esperado: 44
+  [OK     ] San Isidro, sem. 22-34: venta, S/                              obtenido: 14947.63       esperado: 14948
+  [OK     ] San Isidro, sem. 22-34: conversion, %                          obtenido: 4.7088         esperado: 4.71
+  [OK     ] Tiendas excluidas: % del flujo                                 obtenido: 5.867          esperado: 5.9
+  [OK     ] Tiendas excluidas: % de la venta                               obtenido: 5.042          esperado: 5.0
+
+==============================================================================
+ 9. VALOR IDEAL, CATORCE TIENDAS, SEMANAS 2 A 34 DE 2026
+==============================================================================
+  [OK     ] Conversion real, catorce tiendas, %                            obtenido: 6.490519       esperado: 6.4905
+  [OK     ] Percentil 75 ponderado, %                                      obtenido: 7.154998       esperado: 7.1550
+  [OK     ] Percentil 90 ponderado (valor ideal), %                        obtenido: 7.611946       esperado: 7.6119
+  [OK     ] Mejor semana propia ponderada, %                               obtenido: 8.246769       esperado: 8.2468
+  [OK     ] Brecha contra el percentil 75, pp                              obtenido: 0.6645         esperado: 0.66
+  [OK     ] Brecha contra el percentil 90, pp                              obtenido: 1.1214         esperado: 1.12
+  [OK     ] Brecha contra la mejor semana, pp                              obtenido: 1.7563         esperado: 1.76
+  [OK     ] Brecha contra el referente de 10%, pp                          obtenido: 3.5095         esperado: 3.51
+
+Tiendas con semanas sobre 10% (14 tiendas): TB RPCUS 
+  [OK     ] Semanas-tienda validas, catorce tiendas                        obtenido: 439.00         esperado: 439
+  [OK     ] Semanas-tienda sobre 10%, catorce tiendas                      obtenido: 10.00          esperado: 10
+  [OK     ] Semanas-tienda sobre 10%, % de las catorce                     obtenido: 2.278          esperado: 2.3
+  [OK     ] Semanas-tienda validas, dieciseis tiendas                      obtenido: 499.00         esperado: 499
+  [OK     ] Semanas-tienda sobre 10%, dieciseis tiendas                    obtenido: 20.00          esperado: 20
+
+==============================================================================
+ 10. PANEL CON EFECTOS FIJOS Y VARIABLE INSTRUMENTAL
+==============================================================================
+OLS estimation, Dep. Var.: conv
+Observations: 37,546
+Fixed-effects: tienda_hora: 168,  fecha: 602
+Standard-errors: Clustered (tienda) 
+    Estimate Std. Error t value      Pr(>|t|)    
+lf -0.012853   0.001256 -10.237 0.00000013701 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.043779     Adj. R2: 0.072661
+                 Within R2: 0.007451
+  [OK     ] Panel: observaciones                                           obtenido: 37546.00       esperado: 37546
+  [OK     ] Panel: coeficiente de ln(flujo)                                obtenido: -0.0128534     esperado: -0.01285
+  [OK     ] Panel: error estandar                                          obtenido: 0.0012556      esperado: 0.00126
+  [OK     ] Panel: valor p                                                 obtenido: 1.37e-07       esperado: < 0.001
+  [OK     ] Efecto de +10% de flujo, pp                                    obtenido: -0.1225        esperado: -0.12
+                              m_ols               m_fs               m_iv
+Dependent Var.:                conv                 lf               conv
+                                                                         
+lf              -0.0123*** (0.0012)                    -0.0198** (0.0047)
+lf7                                 0.1322*** (0.0174)                   
+Fixed-Effects:  ------------------- ------------------ ------------------
+tienda_hora                     Yes                Yes                Yes
+fecha                           Yes                Yes                Yes
+_______________ ___________________ __________________ __________________
+S.E.: Clustered          by: tienda         by: tienda         by: tienda
+Observations                 36,086             36,086             36,086
+R2                          0.08989            0.70175            0.08436
+Within R2                   0.00667            0.03622            0.00063
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+  [OK     ] VI: observaciones                                              obtenido: 36086.00       esperado: 36086
+  [OK     ] VI: coeficiente de primera etapa                               obtenido: 0.132249       esperado: 0.1322
+  [OK     ] VI: estadistico t de primera etapa                             obtenido: 7.6203         esperado: 7.62
+  [OK     ] VI: coeficiente de ln(flujo)                                   obtenido: -0.0198361     esperado: -0.01984
+  [OK     ] VI: error estandar                                             obtenido: 0.0047093      esperado: 0.00471
+  [OK     ] VI: valor p                                                    obtenido: 0.00102        esperado: 0.001
+  [OK     ] OLS en la muestra de la VI: coeficiente                        obtenido: -0.0122836     esperado: -0.01228
+  [OK     ] Elasticidad transacciones-flujo, MCO                           obtenido: 0.67730        esperado: 0.677
+  [OK     ] Elasticidad transacciones-flujo, VI                            obtenido: 0.66037        esperado: 0.660
+
+==============================================================================
+ 11. CORTE TRANSVERSAL Y VARIANZA, CATORCE TIENDAS
+==============================================================================
+
+	Spearman's rank correlation rho
+
+data:  ct$flujo_sem and ct$conv
+S = 800, p-value = 0.00252
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.7582418 
+
+
+	Pearson's product-moment correlation
+
+data:  ct$flujo_sem and ct$conv
+t = -1.6873, df = 12, p-value = 0.1174
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.7858817  0.1207413
+sample estimates:
+       cor 
+-0.4378907 
+
+  [OK     ] Spearman flujo semanal - conversion                            obtenido: -0.75824       esperado: -0.758
+  [OK     ] Spearman: valor p                                              obtenido: 0.00252        esperado: 0.003
+  [OK     ] Pearson flujo semanal - conversion                             obtenido: -0.43789       esperado: -0.438
+  [OK     ] Pearson: valor p                                               obtenido: 0.11735        esperado: 0.117
+  [OK     ] R2 de la tienda                                                obtenido: 0.44209        esperado: 0.442
+  [OK     ] R2 de la semana calendario                                     obtenido: 0.15903        esperado: 0.159
+  [OK     ] R2 de tienda y semana                                          obtenido: 0.62201        esperado: 0.622
+  [OK     ] Desviacion entre tiendas, pp                                   obtenido: 1.0028         esperado: 1.00
+  [OK     ] Desviacion dentro de cada tienda, pp                           obtenido: 0.9939         esperado: 0.99
+
+==============================================================================
+ 12. SEMANAS FRONTERA, COMPOSICION DEL TRAFICO Y TEMPORALIDAD
+==============================================================================
+  [OK     ] Conversion de las semanas frontera, %                          obtenido: 7.9268         esperado: 7.93
+  [OK     ] Conversion de las demas semanas, %                             obtenido: 6.3171         esperado: 6.32
+  [OK     ] Flujo de las semanas frontera / demas (mediana)                obtenido: 0.890629       esperado: 0.8906
+  [OK     ] Componente de composicion con MCO, pp                          obtenido: 0.1489         esperado: 0.15
+  [OK     ] Componente de composicion con VI, pp                           obtenido: 0.2298         esperado: 0.23
+  [OK     ] Brecha atribuible a la gestion, MCO, pp                        obtenido: 0.9725         esperado: 0.97
+  [OK     ] Brecha atribuible a la gestion, VI, pp                         obtenido: 0.8917         esperado: 0.89
+  [OK     ] Semanas frontera                                               obtenido: 53.00          esperado: 53
+  [OK     ] Semanas frontera desde la semana 11                            obtenido: 52.00          esperado: 52
+  [OK     ] Racha maxima de semanas frontera consecutivas                  obtenido: 3.00           esperado: 3
+  [OK     ] Conversion 2026, semanas 2 a 10, %                             obtenido: 5.9766         esperado: 5.98
+  [OK     ] Conversion 2026, semanas 11 a 34, %                            obtenido: 6.6797         esperado: 6.68
+  [OK     ] Conversion 2025, semanas 2 a 10, %                             obtenido: 5.2946         esperado: 5.29
+  [OK     ] Conversion 2025, semanas 11 a 34, %                            obtenido: 5.4422         esperado: 5.44
+  [OK     ] Brecha recalculada sobre semanas 11 a 34, pp                   obtenido: 1.0077         esperado: 1.01
+  [OK     ] Tendencia de la conversion de red, pp por semana               obtenido: 0.02330        esperado: 0.023
+
+==============================================================================
+ 13. DISTRIBUCION DE LA VENTAJA DE LA FRONTERA (Tabla de segmentos)
+==============================================================================
+              dia                franja conv_demas conv_frontera     aporte acumulado
+1 Lunes a viernes Punta (18:00 a 21:59)   6.667371      8.732764 0.57349621  35.09436
+2 Lunes a viernes Valle (11:00 a 17:59)   6.454362      7.947483 0.42266418  60.95874
+3          Sabado Valle (11:00 a 17:59)   6.717015      8.350223 0.16862823  71.27773
+4         Domingo Punta (18:00 a 21:59)   5.714999      7.359487 0.16688410  81.48999
+5         Domingo Valle (11:00 a 17:59)   5.705850      7.035473 0.16207780  91.40813
+6          Sabado Punta (18:00 a 21:59)   6.414277      7.870370 0.12996188  99.36097
+7       Tres dias      Apertura (10:00)   4.157162      4.597701 0.01044267 100.00000
+  [OK     ] Segmentos: conversion de las demas semanas                     obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Segmentos: conversion de las semanas frontera                  obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Segmentos: aporte, pp                                          obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Segmentos: participacion acumulada, %                          obtenido: 7 de 7         esperado: 7 de 7
+  [OK     ] Suma de los aportes, pp                                        obtenido: 1.6342         esperado: 1.63
+  [OK     ] Diferencia simple frontera - demas, pp                         obtenido: 1.6098         esperado: 1.61
+  grupo banda      FALSE       TRUE   ventaja
+1  alto punta 0.06080397 0.07883667 1.8032701
+2  alto valle 0.06332872 0.07206917 0.8740446
+3 otras punta 0.06601849 0.08429119 1.8272698
+4 otras valle 0.06325643 0.08100046 1.7744031
+  [OK     ] Alto flujo: ventaja de la frontera en punta, pp                obtenido: 1.8033         esperado: 1.80
+  [OK     ] Alto flujo: ventaja de la frontera en valle, pp                obtenido: 0.8740         esperado: 0.87
+  [OK     ] Otras doce: ventaja de la frontera en punta, pp                obtenido: 1.8273         esperado: 1.83
+  [OK     ] Otras doce: ventaja de la frontera en valle, pp                obtenido: 1.7744         esperado: 1.77
+  [OK     ] Alto flujo: % de la venta de las catorce tiendas               obtenido: 37.557         esperado: 37.6
+  [OK     ] Alto flujo: % de la venta de la red de dieciseis               obtenido: 35.664         esperado: 35.7
+  [OK     ] Apertura: conversion de las 10:00, %                           obtenido: 4.2092         esperado: 4.21
+  [OK     ] Apertura: conversion del resto del dia, %                      obtenido: 6.5458         esperado: 6.55
+  [OK     ] Apertura: ganancia si iguala al resto, pp                      obtenido: 0.05526        esperado: 0.055
+  [OK     ] Apertura: % de la brecha                                       obtenido: 4.928          esperado: 4.9
+
+==============================================================================
+ 14. SISTEMA DE METAS, CATORCE TIENDAS
+==============================================================================
+  anio mes semana categoria nro_tienda     tienda                     nombre_tienda  meta     venta cumplimiento
+1 2025   1      1   THE BOX          6    TB JPSU              THE BOX JOCKEY PLAZA 52782 48448.892    0.9179056
+2 2025   1      1   THE BOX          8 TB RPCIX 1     THE BOX REAL PLAZA CHICLAYO 1 19395 15167.475    0.7820302
+3 2025   1      1   THE BOX          9    TB MASA THE BOX MALL AVENTURA SANTA ANITA 16750  8492.916    0.5070397
+  [OK     ] Observaciones semana-tienda                                    obtenido: 396.00         esperado: 396
+  [OK     ] Crecimiento exigido por la meta 2026, %                        obtenido: 145.201        esperado: 145.2
+  [OK     ] Crecimiento logrado, %                                         obtenido: 84.502         esperado: 84.5
+  [OK     ] Meta vigente: % semanas-tienda >= 80%                          obtenido: 38.384         esperado: 38.4
+  [OK     ] Meta vigente: % semanas-tienda >= 100%                         obtenido: 5.808          esperado: 5.8
+  [OK     ] Meta con crecimiento de 84.5%: >= 80%                          obtenido: 64.646         esperado: 64.6
+  [OK     ] Meta con crecimiento de 84.5%: >= 100%                         obtenido: 45.202         esperado: 45.2
+  [OK     ] Meta con crecimiento de 65.0%: >= 80%                          obtenido: 75.505         esperado: 75.5
+  [OK     ] Meta con crecimiento de 65.0%: >= 100%                         obtenido: 52.778         esperado: 52.8
+  [OK     ] Meta con crecimiento de 60.0%: >= 80%                          obtenido: 77.525         esperado: 77.5
+  [OK     ] Meta con crecimiento de 60.0%: >= 100%                         obtenido: 56.313         esperado: 56.3
+  [OK     ] Meta con crecimiento de 40.0%: >= 80%                          obtenido: 87.626         esperado: 87.6
+  [OK     ] Meta con crecimiento de 40.0%: >= 100%                         obtenido: 69.192         esperado: 69.2
+
+	Pearson's product-moment correlation
+
+data:  jj$cumpl and jj$conv
+t = 0.29468, df = 12, p-value = 0.7733
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.4668123  0.5888580
+sample estimates:
+       cor 
+0.08476089 
+
+  [OK     ] Tiendas cruzadas                                               obtenido: 14.00          esperado: 14
+  [OK     ] Correlacion cumplimiento - conversion                          obtenido: 0.08476        esperado: 0.085
+  [OK     ] Correlacion: valor p                                           obtenido: 0.77327        esperado: 0.773
+
+==============================================================================
+ 15. MAGNITUD ECONOMICA, CATORCE TIENDAS
+==============================================================================
+  [OK     ] Factor de estacionalidad                                       obtenido: 1.901155       esperado: 1.9012
+  [OK     ] Flujo de la semana 51 de 2025                                  obtenido: 66775.00       esperado: 66775
+  [OK     ] Flujo de la semana 52 de 2025                                  obtenido: 90763.00       esperado: 90763
+  [OK     ] Promedio semanal de flujo de 2025                              obtenido: 25727.92       esperado: 25728
+  [OK     ] Flujo anual equivalente                                        obtenido: 1598511.70     esperado: 1598512
+  [OK     ] Transacciones anuales adicionales                              obtenido: 17926.15       esperado: 17926
+  [OK     ] Facturacion no capturada, S/ millones                          obtenido: 6.4089         esperado: 6.41
+  [OK     ] Venta por visitante actual, S/                                 obtenido: 23.2048        esperado: 23.20
+  [OK     ] Venta por visitante en la frontera, S/                         obtenido: 27.2141        esperado: 27.21
+  [OK     ] Brecha de venta por visitante, S/                              obtenido: 4.0093         esperado: 4.01
+  [OK     ] 1 pp de conversion con perfil estacional, S/ millones          obtenido: 5.7150         esperado: 5.71
+  [OK     ] 1 pp de conversion sin ajuste estacional, S/ millones          obtenido: 4.7368         esperado: 4.74
+  [OK     ] Venta anual del canal, catorce tiendas, S/ millones            obtenido: 37.0931        esperado: 37.09
+  [OK     ] Facturacion no capturada, % de la venta anual                  obtenido: 17.278         esperado: 17.3
+  [OK     ] Asesores declarados, catorce tiendas                           obtenido: 63.00          esperado: 63
+  [OK     ] Transacciones por asesor por semana                            obtenido: 26.250         esperado: 26.2
+  [OK     ] Transacciones por asesor en la frontera                        obtenido: 30.785         esperado: 30.8
+  [OK     ] Brecha de transacciones por asesor                             obtenido: 4.535          esperado: 4.5
+  [OK     ] Brecha de venta semanal por asesor, S/                         obtenido: 1621.48        esperado: 1621
+  [OK     ] Oportunidad de la UPT, S/ millones                             obtenido: 3.6873         esperado: 3.69
+
+==============================================================================
+ 16. MARGEN BRUTO (base de stock y venta, semana del 20 al 26/09/2026)
+==============================================================================
+       tienda    venta7     util7    margen
+1     TB JPSU 131599.52 55312.883 0.4203122
+2  TB LMMIR 2  40270.75 16801.224 0.4172066
+3    TB MAAQP  44572.44 15970.193 0.3582975
+4    TB MACIX  44880.10 18973.334 0.4227561
+5     TB MASA  25086.07 10597.918 0.4224623
+6    TB MGCHM  25871.16 11237.811 0.4343759
+7    TB MGIND  35347.56 14851.357 0.4201522
+8    TB MPAQP  36781.29 14552.371 0.3956461
+9    TB MPTRU 130295.15 56166.715 0.4310730
+10    TB PCSI  16832.98  7559.611 0.4490951
+11    TB RBBR  12708.00  5546.151 0.4364299
+12    TB RBSB  31060.61 13448.017 0.4329605
+13 TB RPCIX 1  61271.71 26258.444 0.4285574
+14   TB RPCUS  20868.87  8366.540 0.4009100
+15  TB RPPIU2  35811.82 15054.860 0.4203881
+16 TB RPPUR 1  36330.72 14272.014 0.3928360
+  [OK     ] Tiendas The Box en la base de stock                            obtenido: 16.00          esperado: 16
+  [OK     ] Margen bruto, dieciseis tiendas, %                             obtenido: 41.800         esperado: 41.8
+  [OK     ] Utilidad bruta no capturada, S/ millones                       obtenido: 2.6789         esperado: 2.68
+  Referencia: margen de las catorce tiendas 41.66%; utilidad no capturada S/2.67 millones
+
+==============================================================================
+ 17. OBSERVACION DE CAMPO DEL 27/09/2026 (Anexo C)
+==============================================================================
+List of 10
+ $ domingos: int 33
+ $ f_esp   : num 83.2
+ $ t_esp   : num 4.38
+ $ conv_esp: num 0.0526
+ $ pct_f   : num 21.2
+ $ pct_t   : num 36.4
+ $ max_f   : num 126
+ $ min_t   : num 0
+ $ ic      : num [1:2] 2.46 15
+  ..- attr(*, "conf.level")= num 0.95
+ $ carga   : num 11.9
+List of 10
+ $ domingos: int 33
+ $ f_esp   : num 331
+ $ t_esp   : num 19.7
+ $ conv_esp: num 0.0595
+ $ pct_f   : num 100
+ $ pct_t   : num 0
+ $ max_f   : num 467
+ $ min_t   : num 8.62
+ $ ic      : num [1:2] 0.282 1.848
+  ..- attr(*, "conf.level")= num 0.95
+ $ carga   : num 28.8
+  [OK     ] Larcomar 2: domingos de referencia                             obtenido: 33.00          esperado: 33
+  [OK     ] Larcomar 2: flujo esperado                                     obtenido: 83.245         esperado: 83.2
+  [OK     ] Larcomar 2: percentil del flujo observado                      obtenido: 21.21          esperado: 21
+  [OK     ] Larcomar 2: ventas esperadas                                   obtenido: 4.376          esperado: 4.4
+  [OK     ] Larcomar 2: percentil de las ventas observadas                 obtenido: 36.36          esperado: 36
+  [OK     ] Larcomar 2: conversion esperada, %                             obtenido: 5.2571         esperado: 5.26
+  [OK     ] Larcomar 2: limite inferior Wilson, %                          obtenido: 2.4571         esperado: 2.46
+  [OK     ] Larcomar 2: limite superior Wilson, %                          obtenido: 14.9975        esperado: 15.00
+  [OK     ] Larcomar 2: ingresos por asesor y hora, sistema                obtenido: 11.892         esperado: 11.9
+  [OK     ] Jockey Plaza: flujo esperado                                   obtenido: 331.182        esperado: 331.2
+  [OK     ] Jockey Plaza: ventas esperadas                                 obtenido: 19.711         esperado: 19.7
+  [OK     ] Jockey Plaza: conversion esperada, %                           obtenido: 5.9517         esperado: 5.95
+  [OK     ] Jockey Plaza: limite inferior Wilson, %                        obtenido: 0.2821         esperado: 0.28
+  [OK     ] Jockey Plaza: limite superior Wilson, %                        obtenido: 1.8482         esperado: 1.85
+  [OK     ] Jockey Plaza: ingresos por asesor y hora, sistema              obtenido: 28.798         esperado: 28.8
+  [OK     ] Jockey Plaza: flujo observado (552) sobre el maximo            obtenido: 466.6          esperado: < 552
+  [OK     ] Jockey Plaza: ventas observadas (4) bajo el minimo             obtenido: 8.6            esperado: > 4
+  [OK     ] Carga Jockey / Larcomar 2 (ambas segun sistema)                obtenido: 2.422          esperado: 2.4
+
+==============================================================================
+ 18. CURVA DE TALLAS (stock al 20/09/2026 y venta del 21 al 26/09/2026)
+==============================================================================
+Columnas del archivo semanal (ALU, STK DISPO, Venta Ult 4 Sem Und y S/, TIENDA,
+ CANAL, PADRE, Talla, TempVenta, CATEGORIA, GENERO_F, MF):
+ [1] "ALU"                   "STK DISPO"             "Venta Ult 4 Sem (Und)" "Venta Ult 4 Sem (S/)" 
+ [5] "TIENDA"                "CANAL"                 "PADRE"                 "Talla"                
+ [9] "TempVenta"             "CATEGOR<U+00CD>A"      "GENERO_F"              "MF"                   
+Columnas del archivo diario (ALU, QtyDispo, D2 a D7 Und, StoreCode, Canal, Padre, SizeCode):
+ [1] "ALU"       "QtyDispo"  "D2 Und"    "D3 Und"    "D4 Und"    "D5 Und"    "D6 Und"    "D7 Und"    "StoreCode"
+[10] "Canal"     "Padre"     "SizeCode" 
+  [OK     ] Zapatillas: % de la venta en S/ de S35-S38 (14 tiendas)        obtenido: 90.526         esperado: 90.5
+  [OK     ] Modelos-color de zapatilla con curva valida                    obtenido: 462.00         esperado: 462
+  [OK     ] Tienda x modelo-color exhibidos, catorce tiendas               obtenido: 1782.00        esperado: 1782
+  [OK     ] Cobertura de demanda ponderada, %                              obtenido: 73.556         esperado: 73.6
+  [OK     ] % de modelos exhibidos con curva incompleta                    obtenido: 80.808         esperado: 80.8
+  [OK     ] % de modelos exhibidos con cobertura < 50%                     obtenido: 31.481         esperado: 31.5
+  [OK     ] % de la demanda esperada sin talla disponible                  obtenido: 26.444         esperado: 26.4
+  [OK     ] Demanda faltante en tallas vendidas en S35-S38, %              obtenido: 52.023         esperado: 52.0
+  [OK     ] Demanda faltante repuesta al 26/09, %                          obtenido: 20.852         esperado: 20.9
+  [OK     ] Tallas nucleo: modelos exhibidos con al menos una              obtenido: 1764.00        esperado: 1764
+  [OK     ] Tallas nucleo: % al que le falta al menos una                  obtenido: 73.186         esperado: 73.2
+  [OK     ] Tallas nucleo: % al que le faltan dos o mas                    obtenido: 49.036         esperado: 49.0
+  [OK     ] Temporada 2026: % de la demanda esperada                       obtenido: 54.397         esperado: 54.4
+  [OK     ] Temporada 2026: cobertura ponderada, %                         obtenido: 68.267         esperado: 68.3
+Poisson estimation, Dep. Var.: u6
+Observations: 1,457
+Fixed-effects: tienda: 14,  padre: 166
+Standard-errors: Clustered (tienda) 
+     Estimate Std. Error z value          Pr(>|z|)    
+lcov 0.421197   0.093883 4.48639 0.000007244039896 ***
+lu4  0.616004   0.094847 6.49470 0.000000000083199 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Log-Likelihood: -1,416.1   Adj. Pseudo R2: 0.19184 
+           BIC:  4,150.5     Squared Cor.: 0.564554
+  [OK     ] Poisson: observaciones                                         obtenido: 1457.00        esperado: 1457
+  [OK     ] Poisson: elasticidad venta - cobertura                         obtenido: 0.42120        esperado: 0.421
+  [OK     ] Poisson: error estandar                                        obtenido: 0.09388        esperado: 0.094
+  [OK     ] Poisson: valor p                                               obtenido: 7.244e-06      esperado: < 0.001
+  [OK     ] Poisson con error agrupado por modelo: valor p                 obtenido: 0.005588       esperado: < 0.01
+  [OK     ] Poisson, solo temporada 2026: elasticidad                      obtenido: 0.52544        esperado: 0.525
+  [OK     ] Poisson, solo productos regulares: elasticidad                 obtenido: 0.40471        esperado: 0.405
+                     Estimate Std. Error   z value             Pr(>|z|)
+tramo::menor a 50% -0.4068251 0.12151188 -3.348027 0.000813889705249000
+tramo::50 a 75%    -0.1142278 0.11931803 -0.957339 0.338396172747489066
+tramo::75 a 99%     0.1140513 0.09843446  1.158652 0.246598108411258343
+lu4                 0.6151315 0.08751890  7.028556 0.000000000002086815
+attr(,"vcov_type")
+[1] "Clustered (tienda)"
+  [OK     ] Cobertura < 50%: coeficiente frente a curva completa           obtenido: -0.40683       esperado: -0.407
+  [OK     ] Cobertura < 50%: valor p                                       obtenido: 0.0008139      esperado: < 0.001
+  [OK     ] Cobertura 50 a 99%: sin diferencia significativa (p > 0,05)    obtenido: 0.247          esperado: > 0.05
+  [OK     ] Venta de zapatillas perdida con la elasticidad estimada, %     obtenido: 14.098         esperado: 14.1
+  [OK     ] Venta perdida usando solo el tramo < 50%, %                    obtenido: 6.491          esperado: 6.5
+  [OK     ] Cota en conversion, elasticidad, 1 unidad por transaccion, pp  obtenido: 0.9858         esperado: 0.99
+  [OK     ] Cota en conversion, elasticidad, UPT de red, pp                obtenido: 0.6900         esperado: 0.69
+  [OK     ] Cota en conversion, tramo < 50%, 1 unidad por transaccion, pp  obtenido: 0.4170         esperado: 0.42
+  [OK     ] Cota en conversion, tramo < 50%, UPT de red, pp                obtenido: 0.2919         esperado: 0.29
+  [OK     ] Spearman cobertura de tienda - conversion                      obtenido: -0.09011       esperado: -0.090
+  [OK     ] Spearman cobertura - conversion: no significativo              obtenido: 0.762          esperado: > 0.05
+       tienda stock   u4   semanas
+1    TB MPTRU  1620 1278  5.070423
+2     TB JPSU  1748 1201  5.821815
+3  TB RPCIX 1   702  474  5.924051
+4   TB RPPIU2   939  338 11.112426
+5    TB MACIX  1118  400 11.180000
+6    TB RPCUS   760  270 11.259259
+7    TB MPAQP   723  248 11.661290
+8    TB MGIND   982  332 11.831325
+9  TB RPPUR 1  1087  326 13.337423
+10   TB MAAQP  1084  294 14.748299
+11    TB MASA   920  239 15.397490
+12 TB LMMIR 2  1373  340 16.152941
+13    TB RBSB   978  235 16.646809
+14    TB RBBR   845  147 22.993197
+  [OK     ] Semanas de cobertura, minimo (Mall Plaza Trujillo)             obtenido: 5.0704         esperado: 5.07
+  [OK     ] Semanas de cobertura, maximo (La Rambla Brasil)                obtenido: 22.9932        esperado: 22.99
+  [OK     ] Semanas de cobertura, Jockey Plaza                             obtenido: 5.8218         esperado: 5.82
+  [OK     ] Spearman semanas de cobertura - venta                          obtenido: -0.80220       esperado: -0.802
+  [OK     ] Spearman semanas de cobertura - venta: valor p                 obtenido: 0.0009148      esperado: < 0.001
+
+==============================================================================
+ 19. DOTACION PLANIFICADA FRENTE AL FLUJO (semanas 34 a 38 de 2026)
+==============================================================================
+   semana   franja staff         fe pct_staff pct_flujo vis_persona
+1      34 Apertura   160   637.0458  4.606968  2.370706    3.981536
+2      34    Punta  1119 12597.0499 32.219983 46.878732   11.257417
+3      34    Valle  2194 13637.4714 63.173049 50.750562    6.215803
+4      35 Apertura   168   637.0458  4.840104  2.370706    3.791939
+5      35    Punta  1110 12597.0499 31.979257 46.878732   11.348694
+6      35    Valle  2193 13637.4714 63.180640 50.750562    6.218637
+7      36 Apertura   203   637.0458  5.836688  2.370706    3.138157
+8      36    Punta  1141 12597.0499 32.806210 46.878732   11.040359
+9      36    Valle  2134 13637.4714 61.357102 50.750562    6.390568
+10     37 Apertura   211   637.0458  6.130157  2.370706    3.019174
+11     37    Punta  1156 12597.0499 33.585125 46.878732   10.897102
+12     37    Valle  2075 13637.4714 60.284718 50.750562    6.572275
+13     38 Apertura   209   637.0458  6.127235  2.370706    3.048066
+14     38    Punta  1127 12597.0499 33.040164 46.878732   11.177507
+15     38    Valle  2075 13637.4714 60.832600 50.750562    6.572275
+  [OK     ] Punta: % del flujo esperado                                    obtenido: 46.8787        esperado: 46.88
+  [OK     ] Punta: % de las horas-persona, semana 34                       obtenido: 32.2200        esperado: 32.22
+  [OK     ] Punta: % de las horas-persona, semana 38                       obtenido: 33.0402        esperado: 33.04
+  [OK     ] Visitas por persona y hora en punta, semana 34                 obtenido: 11.2574        esperado: 11.26
+  [OK     ] Visitas por persona y hora en valle, semana 34                 obtenido: 6.2158         esperado: 6.22
+  [OK     ] Visitas por persona y hora en punta, semana 38                 obtenido: 11.1775        esperado: 11.18
+  [OK     ] Visitas por persona y hora en valle, semana 38                 obtenido: 6.5723         esperado: 6.57
+  [OK     ] Tiendas con mas visitas por persona en punta que en valle      obtenido: 14.00          esperado: 14
+  [OK     ] Valle: % del flujo esperado                                    obtenido: 50.7506        esperado: 50.75
+  [OK     ] Punta: % de las horas-persona, minimo de las semanas 34 a 38   obtenido: 31.9793        esperado: 31.98
+  [OK     ] Punta: % de las horas-persona, maximo de las semanas 34 a 38   obtenido: 33.5851        esperado: 33.59
+  [OK     ] Valle: % de las horas-persona supera 60% en todas las semanas  obtenido: 60.28          esperado: > 60
+   hora staff        fe pct_flujo pct_staff vis_persona
+1    10   951  3185.229  2.370706  5.505065    3.349347
+2    11   984  5523.984  4.111397  5.696093    5.613805
+3    12  1164  7904.084  5.882860  6.738061    6.790450
+4    13  1228  8449.492  6.288797  7.108538    6.880694
+5    14  1823  8638.121  6.429191 10.552822    4.738410
+6    15  1871 10190.557  7.584639 10.830680    5.446583
+7    16  1837 12506.522  9.308368 10.633864    6.808123
+8    17  1764 14974.598 11.145310 10.211288    8.489001
+9    18  1738 16859.836 12.548457 10.060781    9.700711
+10   19  1382 17702.417 13.175574  8.000000   12.809274
+11   20  1346 16566.647 12.330243  7.791606   12.308059
+12   21  1187 11856.350  8.824457  6.871201    9.988500
+  [OK     ] Hora de mayor flujo esperado                                   obtenido: 19.00          esperado: 19
+  [OK     ] Maximo de horas-persona entre las 14:00 y las 16:00            obtenido: 15             esperado: 14 a 16
+  [OK     ] 19:00: % del flujo esperado del dia                            obtenido: 13.1756        esperado: 13.18
+  [OK     ] 19:00: % de las horas-persona del dia                          obtenido: 8.0000         esperado: 8.00
+  [OK     ] 19:00: visitas por persona                                     obtenido: 12.8093        esperado: 12.81
+  [OK     ] Turnos de 11 horas o mas, % del total, semana 34               obtenido: 4.700          esperado: 4.7
+  [OK     ] Turnos de 11 horas o mas, % del total, semana 38               obtenido: 33.100         esperado: 33.1
+  [OK     ] Dos turnos mas frecuentes, semanas 34 a 38                     obtenido: 14:00-22:00 y 10:00-19:00 esperado: 14:00-22:00 y 10:00-19:00
+  [OK     ] Semana 34: celdas tienda-dia-hora cruzadas                     obtenido: 1150.00        esperado: 1150
+  t       vpp     conv
+1 1  2.982616 7.604774
+2 2  5.834910 7.206012
+3 3 11.731151 6.993658
+  [OK     ] Semana 34: conversion por tercio de visitas por persona        obtenido: 3 de 3         esperado: 3 de 3
+OLS estimation, Dep. Var.: conv
+Observations: 383
+Fixed-effects: th: 123,  fecha: 7
+Standard-errors: Clustered (tienda) 
+     Estimate Std. Error  t value Pr(>|t|) 
+lvpp -0.01119   0.010305 -1.08585  0.29727 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.037342     Adj. R2: 0.141067
+                 Within R2: 0.006918
+  [OK     ] Semana 34: coeficiente de ln(visitas por persona)              obtenido: -0.011190      esperado: -0.0112
+  [OK     ] Semana 34: valor p (no significativo)                          obtenido: 0.29727        esperado: 0.297
+
+==============================================================================
+ 20. METAS DEL ARBOL DE OBJETIVOS (Capitulo III)
+==============================================================================
+  [OK     ] Objetivo central: conversion meta, %                           obtenido: 7.3822         esperado: 7.38
+  [OK     ] Objetivo central: mejora sobre la linea base, pp               obtenido: 0.8917         esperado: 0.89
+  [OK     ] Fin: venta por visitante con la meta, S/                       obtenido: 26.3926        esperado: 26.39
+  [OK     ] Fin: transacciones por asesor por semana con la meta           obtenido: 29.856         esperado: 29.9
+  [OK     ] Fin: transacciones anuales adicionales                         obtenido: 14253.46       esperado: 14253
+  [OK     ] Fin: facturacion adicional, S/ millones                        obtenido: 5.0959         esperado: 5.10
+  [OK     ] Fin: facturacion adicional, % de la venta anual                obtenido: 13.738         esperado: 13.7
+  [OK     ] Fin: utilidad bruta adicional, S/ millones                     obtenido: 2.1301         esperado: 2.13
+
+==============================================================================
+ 21. PROGRAMACION DE TURNOS POR FRANJA (semana 38 como base)
+==============================================================================
+  [OK     ] Tipos de turno del modelo presentes en la hoja de turnos       obtenido: 20 de 20       esperado: 20 de 20
+  [OK     ] Escenario A: problemas tienda-dia con solucion optima          obtenido: 98.00          esperado: 98
+    franja         fe actual propuesto carga_actual carga_propuesta pct_actual pct_propuesto
+1 Apertura   637.0458    209       185     3.048066        3.443491   6.127235      5.555556
+2    Punta 12597.0499   1127      1283    11.177507        9.818433  33.040164     38.528529
+3    Valle 13637.4714   2075      1862     6.572275        7.324099  60.832600     55.915916
+   hora        fe actual propuesto carga_actual carga_propuesta
+1    10  637.0458    209       185     3.048066        3.443491
+2    11 1104.7968    219       198     5.044734        5.579782
+3    12 1580.8167    236       235     6.698376        6.726880
+4    13 1689.8983    244       244     6.925813        6.925813
+5    14 1727.6243    339       262     5.096237        6.593986
+6    15 2038.1113    352       292     5.790089        6.979833
+7    16 2501.3044    349       320     7.167061        7.816576
+8    17 2994.9195    336       311     8.913451        9.629966
+9    18 3371.9672    327       343    10.311826        9.830808
+10   19 3540.4833    277       337    12.781528       10.505885
+11   20 3313.3295    270       320    12.271591       10.354155
+12   21 2371.2700    253       283     9.372609        8.379046
+  [OK     ] Horas-persona de atencion, plan de la semana 38                obtenido: 3411.00        esperado: 3411
+  [OK     ] Escenario A: horas-persona de atencion                         obtenido: 3330.00        esperado: 3330
+  [OK     ] Punta: carga actual                                            obtenido: 11.1775        esperado: 11.18
+  [OK     ] Valle: carga actual                                            obtenido: 6.5723         esperado: 6.57
+  [OK     ] Escenario A: carga en la punta                                 obtenido: 9.8184         esperado: 9.82
+  [OK     ] Escenario A: carga en el valle                                 obtenido: 7.3241         esperado: 7.32
+  [OK     ] Escenario A: % de las horas-persona en la punta                obtenido: 38.529         esperado: 38.5
+  [OK     ] 19:00: carga actual                                            obtenido: 12.7815        esperado: 12.78
+  [OK     ] Escenario A: carga a las 19:00                                 obtenido: 10.5059        esperado: 10.51
+  [OK     ] Carga total del dia, plan actual                               obtenido: 7.8779         esperado: 7.88
+  [OK     ] Carga total del dia, escenario A                               obtenido: 8.0695         esperado: 8.07
+  [OK     ] Escenario A: carga entre las 14:00 y las 16:00, minimo         obtenido: 6.5940         esperado: 6.59
+  [OK     ] Escenario A: carga entre las 14:00 y las 16:00, maximo         obtenido: 7.8166         esperado: 7.82
+       tienda     antes   despues
+1     TB JPSU 15.298769 13.694003
+2  TB LMMIR 2  9.866727  7.936280
+3    TB MAAQP  7.769861  6.764349
+4    TB MACIX 11.017369  9.218615
+5     TB MASA  7.315834  7.115401
+6    TB MGIND 12.653779 10.288587
+7    TB MPAQP  7.273216  5.708094
+8    TB MPTRU 16.571212 15.064738
+9     TB RBBR  6.024793  5.271694
+10    TB RBSB  7.663121  7.203333
+11 TB RPCIX 1 15.570202 12.975168
+12   TB RPCUS  6.881759  6.622070
+13  TB RPPIU2 14.595385 13.176389
+14 TB RPPUR 1 10.015152  9.267752
+  [OK     ] Escenario A: tiendas con menor carga en la punta               obtenido: 14.00          esperado: 14
+  [OK     ] Solo turnos de hasta 9 horas: dias-tienda sin solucion factible obtenido: 33.00          esperado: 33
+     tienda refuerzos usados carga_punta carga_max estado
+1   TB JPSU         0      0   13.694003  25.00000   TRUE
+2   TB JPSU         7      7   11.519073  18.75000   TRUE
+3   TB JPSU        14     14   10.042269  15.00000   TRUE
+4   TB JPSU        21     21    9.108104  12.50000   TRUE
+5   TB JPSU        28     28    8.227909  12.50000   TRUE
+6  TB MPTRU         0      0   15.064738  28.03030   TRUE
+7  TB MPTRU         7      7   12.888721  19.18182   TRUE
+8  TB MPTRU        14     14   11.261989  17.05051   TRUE
+9  TB MPTRU        21     21    9.914400  13.95041   TRUE
+10 TB MPTRU        28     28    9.097920  10.96104   TRUE
+  [OK     ] Escenario B: problemas resueltos con solucion optima           obtenido: 10.00          esperado: 10
+  [OK     ] Jockey Plaza: carga actual en la punta                         obtenido: 15.2988        esperado: 15.30
+  [OK     ] Mall Plaza Trujillo: carga actual en la punta                  obtenido: 16.5712        esperado: 16.57
+  [OK     ] Jockey Plaza: carga en la punta con 0 refuerzos                obtenido: 13.6940        esperado: 13.69
+  [OK     ] Mall Plaza Trujillo: carga en la punta con 0 refuerzos         obtenido: 15.0647        esperado: 15.06
+  [OK     ] Jockey Plaza: carga en la punta con 7 refuerzos                obtenido: 11.5191        esperado: 11.52
+  [OK     ] Mall Plaza Trujillo: carga en la punta con 7 refuerzos         obtenido: 12.8887        esperado: 12.89
+  [OK     ] Jockey Plaza: carga en la punta con 14 refuerzos               obtenido: 10.0423        esperado: 10.04
+  [OK     ] Mall Plaza Trujillo: carga en la punta con 14 refuerzos        obtenido: 11.2620        esperado: 11.26
+  [OK     ] Jockey Plaza: carga en la punta con 21 refuerzos               obtenido: 9.1081         esperado: 9.11
+  [OK     ] Mall Plaza Trujillo: carga en la punta con 21 refuerzos        obtenido: 9.9144         esperado: 9.91
+  [OK     ] Jockey Plaza: carga en la punta con 28 refuerzos               obtenido: 8.2279         esperado: 8.23
+  [OK     ] Mall Plaza Trujillo: carga en la punta con 28 refuerzos        obtenido: 9.0979         esperado: 9.10
+  [OK     ] Jockey Plaza: horas del plan de la semana 38 (10:00 a 21:59)   obtenido: 382.00         esperado: 382
+  [OK     ] Mall Plaza Trujillo: horas del plan de la semana 38 (10:00 a 21:59) obtenido: 410.00         esperado: 410
+  [OK     ] Jockey Plaza: 21 refuerzos, % de horas adicionales             obtenido: 21.990         esperado: 22.0
+  [OK     ] Mall Plaza Trujillo: 21 refuerzos, % de horas adicionales      obtenido: 20.488         esperado: 20.5
+
+==============================================================================
+ 22. REDISTRIBUCION DE TALLAS ENTRE TIENDAS (corte al 20/09/2026)
+==============================================================================
+  [OK     ] Tiendas The Box en Lima                                        obtenido: 8.00           esperado: 8
+  [OK     ] Tiendas The Box fuera de Lima                                  obtenido: 8.00           esperado: 8
+  [OK     ] Demanda faltante cubierta, mismo departamento, %               obtenido: 12.424         esperado: 12.4
+  [OK     ] Demanda faltante cubierta, ambos pasos, %                      obtenido: 28.496         esperado: 28.5
+  [OK     ] Unidades transferidas dentro del mismo departamento            obtenido: 427.00         esperado: 427
+  [OK     ] Unidades por el despacho semanal desde Lima                    obtenido: 314.00         esperado: 314
+  [OK     ] Unidades totales                                               obtenido: 741.00         esperado: 741
+         dpto                         via   n
+1    Arequipa Despacho semanal desde Lima  36
+2    Arequipa          Mismo departamento  49
+3       Cusco Despacho semanal desde Lima  37
+4 La Libertad Despacho semanal desde Lima  97
+5  Lambayeque Despacho semanal desde Lima  98
+6  Lambayeque          Mismo departamento  51
+7        Lima          Mismo departamento 327
+8       Piura Despacho semanal desde Lima  46
+  [OK     ] Cobertura ponderada antes, %                                   obtenido: 73.556         esperado: 73.6
+  [OK     ] Cobertura ponderada solo con el paso 1, %                      obtenido: 76.841         esperado: 76.8
+  [OK     ] Cobertura ponderada despues de ambos pasos, %                  obtenido: 81.091         esperado: 81.1
+  [OK     ] Modelos con cobertura menor a 50%, antes, %                    obtenido: 31.481         esperado: 31.5
+  [OK     ] Modelos con cobertura menor a 50%, despues, %                  obtenido: 23.962         esperado: 24.0
+       tienda         a         b recibe
+1     TB JPSU 0.7686759 0.8225901     63
+2  TB LMMIR 2 0.7966463 0.8416931     61
+3    TB MAAQP 0.7501983 0.8083949     33
+4    TB MACIX 0.6855227 0.7842856     73
+5     TB MASA 0.7132942 0.7736750     46
+6    TB MGIND 0.7607530 0.8357465     54
+7    TB MPAQP 0.6967536 0.7919087     52
+8    TB MPTRU 0.7207498 0.8110128     97
+9     TB RBBR 0.7499775 0.7947464     30
+10    TB RBSB 0.7457963 0.7841212     34
+11 TB RPCIX 1 0.6740164 0.8175854     76
+12   TB RPCUS 0.6811231 0.7660847     37
+13  TB RPPIU2 0.7092596 0.8034618     46
+14 TB RPPUR 1 0.8008731 0.8334453     39
+  [OK     ] Mejor cobertura de tienda antes de redistribuir, %             obtenido: 80.087         esperado: 80.1
+  [OK     ] Peor cobertura de tienda antes de redistribuir, %              obtenido: 67.402         esperado: 67.4
+  [OK     ] Peor cobertura de tienda despues de redistribuir, %            obtenido: 76.608         esperado: 76.6
+  [OK     ] Semanas de cobertura de la red                                 obtenido: 9.7217         esperado: 9.72
+
+==============================================================================
+ 23. CONTROL ESTADISTICO DE LA CONVERSION (graficos p' de Laney)
+==============================================================================
+       tienda semanas bajo alertas        sz
+1     TB JPSU      15    0       0 0.9939175
+2  TB LMMIR 2      15    1       0 0.9001731
+3    TB MAAQP      15    0       0 1.3338960
+4    TB MACIX      15    0       0 1.5701079
+5     TB MASA      15    0       0 1.0300824
+6    TB MGCHM      11    0       0 1.9706271
+7    TB MGIND      15    0       0 1.1636504
+8    TB MPAQP      15    0       0 1.1920201
+9    TB MPTRU      15    0       0 1.7738958
+10    TB PCSI      15   14      10 1.3379285
+11    TB RBBR      15    0       0 1.0683296
+12    TB RBSB      15    0       0 1.3089250
+13 TB RPCIX 1      15    0       0 1.1268492
+14   TB RPCUS      15    0       0 1.3455884
+15 TB RPPUR 1      15    0       0 1.0443164
+  [OK     ] Fase II: alertas de medicion en San Isidro                     obtenido: 10.00          esperado: 10
+  [OK     ] Fase II: alertas de medicion en Mega Plaza Chimbote            obtenido: 0.00           esperado: 0
+  [OK     ] Fase II: alertas de medicion en las catorce tiendas            obtenido: 0.00           esperado: 0
+  [OK     ] Fase II: tiendas de las catorce con fase I                     obtenido: 13.00          esperado: 13
+  [OK     ] Fase II: semanas de San Isidro bajo el limite inferior         obtenido: 14.00          esperado: 14
+  [OK     ] Fase II: semanas-tienda vigiladas, catorce tiendas             obtenido: 195.00         esperado: 195
+  [OK     ] Sobredispersion mediana (sigma z) de las catorce tiendas       obtenido: 1.1637         esperado: 1.16
+  [OK     ] San Isidro: primera semana con alerta                          obtenido: 21.00          esperado: 21
+  [OK     ] Catorce tiendas, 2026: % de transacciones en horas con flujo cero obtenido: 3.9099         esperado: 3.91
+  [OK     ] Catorce tiendas, 2026: % de horas con mas transacciones que visitas obtenido: 0.0771         esperado: 0.08
+
+==============================================================================
+ 24. METODO DE FIJACION DE METAS (prueba retrospectiva 2026)
+==============================================================================
+           n      s80      s100      med      err
+vigente  300 36.33333  4.666667 71.64061 28.35813
+metodo   300 72.33333 46.333333 97.21202 25.36223
+metodo_5 300 68.66667 38.000000 92.58287 24.90201
+  [OK     ] Prueba retrospectiva: semanas-tienda evaluadas                 obtenido: 300.00         esperado: 300
+  [OK     ] Meta vigente: % semanas-tienda >= 80%                          obtenido: 36.333         esperado: 36.3
+  [OK     ] Metodo: % semanas-tienda >= 80%                                obtenido: 72.333         esperado: 72.3
+  [OK     ] Meta vigente: % semanas-tienda >= 100%                         obtenido: 4.667          esperado: 4.7
+  [OK     ] Metodo: % semanas-tienda >= 100%                               obtenido: 46.333         esperado: 46.3
+  [OK     ] Meta vigente: cumplimiento mediano, %                          obtenido: 71.641         esperado: 71.6
+  [OK     ] Metodo: cumplimiento mediano, %                                obtenido: 97.212         esperado: 97.2
+  [OK     ] Meta vigente: desviacion absoluta media del cumplimiento, pp   obtenido: 28.358         esperado: 28.4
+  [OK     ] Metodo: desviacion absoluta media del cumplimiento, pp         obtenido: 25.362         esperado: 25.4
+  [OK     ] Metodo con exigencia de 5%: % semanas-tienda >= 80%            obtenido: 68.667         esperado: 68.7
+  [OK     ] Metodo con exigencia de 5%: % semanas-tienda >= 100%           obtenido: 38.000         esperado: 38.0
+  [OK     ] Metodo con exigencia de 5%: cumplimiento mediano, %            obtenido: 92.583         esperado: 92.6
+  [OK     ] Metodo con exigencia de 5%: desviacion absoluta media, pp      obtenido: 24.902         esperado: 24.9
+
+==============================================================================
+ 25. EJEMPLO DE HORARIO: JOCKEY PLAZA, MIERCOLES Y SABADO DE LA SEMANA 38
+==============================================================================
+  [OK     ] Jockey Plaza: refuerzos por dia (L a D) con 21 por semana      obtenido: 3 2 1 2 2 5 6  esperado: 3 2 1 2 2 5 6
+
+  Dia 3: 5 personas, 1 refuerzos
+   hora flujo actual misma refuerzo
+1    10  10.2      3     2        2
+2    11  17.7      3     2        2
+3    12  29.5      4     3        4
+4    13  32.3      4     4        4
+5    14  30.0      5     4        4
+6    15  34.0      5     4        4
+7    16  43.1      5     5        5
+8    17  50.2      5     5        5
+9    18  56.1      5     5        6
+10   19  53.5      3     5        6
+11   20  53.3      3     5        6
+12   21  38.3      3     4        4
+  Turnos con la misma dotacion: 10:00-22:00 x2 12:00-21:00 x1 13:00-22:00 x1 16:00-22:00 x1 
+  Turnos con refuerzo: 10:00-22:00 x2 12:00-21:00 x2 16:00-22:00 x1 
+
+  Dia 6: 7 personas, 5 refuerzos
+   hora flujo actual misma refuerzo
+1    10  18.0      7     7        3
+2    11  33.5      7     7        5
+3    12  59.8      7     7        7
+4    13  71.0      7     7        7
+5    14  68.4      7     7        7
+6    15  80.5      7     7        7
+7    16  97.3      7     7        7
+8    17 114.3      7     7        7
+9    18 111.0      7     7       12
+10   19 112.8      7     7       12
+11   20 102.2      7     7       12
+12   21  70.1      7     7       11
+  Turnos con la misma dotacion: 10:00-22:00 x7 
+  Turnos con refuerzo: 10:00-21:00 x1 10:00-22:00 x2 11:00-22:00 x2 12:00-22:00 x2 
+  [OK     ] Jockey miercoles: personas programadas                         obtenido: 5.00           esperado: 5
+  [OK     ] Jockey miercoles: horas-persona, plan y modelo                 obtenido: 48.00          esperado: 48
+  [OK     ] Jockey miercoles: horas-persona del plan                       obtenido: 48.00          esperado: 48
+  [OK     ] Jockey miercoles: carga en la punta, plan actual               obtenido: 14.3723        esperado: 14.37
+  [OK     ] Jockey miercoles: carga en la punta, misma dotacion            obtenido: 10.5901        esperado: 10.59
+  [OK     ] Jockey miercoles: carga en la punta, con un refuerzo           obtenido: 9.1460         esperado: 9.15
+  [OK     ] Jockey miercoles: personas a las 19:00, plan actual            obtenido: 3.00           esperado: 3
+  [OK     ] Jockey miercoles: personas a las 19:00, modelo                 obtenido: 5.00           esperado: 5
+  [OK     ] Jockey sabado: personas programadas                            obtenido: 7.00           esperado: 7
+  [OK     ] Jockey sabado: carga en la punta, plan actual                  obtenido: 14.1472        esperado: 14.15
+  [OK     ] Jockey sabado: carga en la punta, misma dotacion               obtenido: 14.1472        esperado: 14.15
+  [OK     ] Jockey sabado: carga en la punta, con cinco refuerzos          obtenido: 8.4281         esperado: 8.43
+
+==============================================================================
+ 26. EJEMPLO DE TRANSFERENCIA DE TALLA
+==============================================================================
+   tienda           alu             padre        w dpto                via
+1 TB JPSU 7615537002101 3ME10101430-M-WHT 6.902709 Lima Mismo departamento
+       tienda        dpto             padre talla disp genero
+1    TB MPTRU La Libertad 3ME10101430-M-WHT     8    4    MEN
+2    TB MACIX  Lambayeque 3ME10101430-M-WHT     8    4    MEN
+3  TB LMMIR 2        Lima 3ME10101430-M-WHT     8    2    MEN
+4  TB RPPUR 1        Lima 3ME10101430-M-WHT     8    1    MEN
+5    TB MGIND        Lima 3ME10101430-M-WHT     8    1    MEN
+6    TB MAAQP    Arequipa 3ME10101430-M-WHT     8    0    MEN
+7     TB JPSU        Lima 3ME10101430-M-WHT     8    0    MEN
+8  TB RPCIX 1  Lambayeque 3ME10101430-M-WHT     8    0    MEN
+9     TB RBBR        Lima 3ME10101430-M-WHT     8    0    MEN
+10   TB RPCUS       Cusco 3ME10101430-M-WHT     8    0    MEN
+11    TB RBSB        Lima 3ME10101430-M-WHT     8    0    MEN
+12   TB MPAQP    Arequipa 3ME10101430-M-WHT     8   -1    MEN
+  [OK     ] Ejemplo: modelo y talla                                        obtenido: 3ME10101430-M-WHT 8 esperado: 3ME10101430-M-WHT 8
+  [OK     ] Ejemplo: tienda de Lima con excedente                          obtenido: TB LMMIR 2     esperado: TB LMMIR 2
+  [OK     ] Ejemplo: unidades disponibles en el origen                     obtenido: 2.00           esperado: 2
+  [OK     ] Unidades que recibe Jockey Plaza                               obtenido: 63.00          esperado: 63
+  [OK     ] Unidades que recibe Mall Plaza Trujillo                        obtenido: 97.00          esperado: 97
+  [OK     ] Jockey Plaza: cobertura antes, %                               obtenido: 76.868         esperado: 76.9
+  [OK     ] Jockey Plaza: cobertura despues, %                             obtenido: 82.259         esperado: 82.3
+  [OK     ] Mall Plaza Trujillo: cobertura antes, %                        obtenido: 72.075         esperado: 72.1
+  [OK     ] Mall Plaza Trujillo: cobertura despues, %                      obtenido: 81.101         esperado: 81.1
+
+==============================================================================
+ 27. EVALUACION ECONOMICA (flujo mensual por fases, VAN, simulacion)
+==============================================================================
+  [OK     ] Venta anual de Jockey Plaza y Mall Plaza Trujillo, S/ millones obtenido: 13.9311        esperado: 13.93
+  [OK     ] Conversion de Jockey Plaza y Mall Plaza Trujillo, %            obtenido: 6.2872         esperado: 6.29
+  [OK     ] Costo laboral anual de un asesor, S/                           obtenido: 36138.67       esperado: 36139
+  [OK     ] Horas efectivas al anio                                        obtenido: 1908.57        esperado: 1909
+  [OK     ] Costo laboral por hora efectiva, S/                            obtenido: 18.9349        esperado: 18.93
+  [OK     ] Venta por unidad / precio de lista en el archivo de stock (New Balance 530) obtenido: 0.84565        esperado: 0.846
+  [OK     ] Inversion inicial, S/                                          obtenido: 6914.79        esperado: 6915
+  [OK     ] Horas de refuerzo por anio, dos tiendas                        obtenido: 8736.00        esperado: 8736
+  [OK     ] Costo anual del refuerzo, S/                                   obtenido: 165415.55      esperado: 165416
+  [OK     ] Costo anual de transferencias, S/                              obtenido: 71136.00       esperado: 71136
+  [OK     ] Capacitacion de la extension (mes 5), S/                       obtenido: 3256.81        esperado: 3257
+  [OK     ] Efecto base de la solucion 2 sobre la venta de zapatillas, %   obtenido: 4.106          esperado: 4.1
+  [OK     ] Efecto optimista de la solucion 2, %                           obtenido: 5.169          esperado: 5.2
+    escenario    eA        eB       van      vanA    vanB
+1  Sin efecto 0.000 0.0000000 -401632.9 -281784.3 -119849
+2 Conservador 0.010 0.0100000  -87840.4 -189773.0  101933
+3        Base 0.033 0.0410607  812652.4   21853.1  790799
+4   Optimista 0.045 0.0516916 1158839.4  132266.6 1026573
+  [OK     ] VAN, escenario sin efecto, S/                                  obtenido: -401632.90     esperado: -401633
+  [OK     ] VAN, escenario conservador, S/                                 obtenido: -87840.41      esperado: -87840
+  [OK     ] VAN, escenario base, S/                                        obtenido: 812652.39      esperado: 812652
+  [OK     ] VAN, escenario optimista, S/                                   obtenido: 1158839.43     esperado: 1158839
+  [OK     ] VAN de la solucion 1, escenario base, S/                       obtenido: 21853.06       esperado: 21853
+  [OK     ] VAN de la solucion 2, escenario base, S/                       obtenido: 790799.34      esperado: 790799
+  [OK     ] VAN de la solucion 1, escenario conservador, S/                obtenido: -189772.99     esperado: -189773
+  [OK     ] VAN de la solucion 2, escenario conservador, S/                obtenido: 101932.58      esperado: 101933
+Flujo neto mensual del escenario base, meses 0 a 12:
+ [1] -6915     0 29092 29092 29092 26796 29092 29092 29092 29092 29092 29092 29092
+  [OK     ] Escenario base: flujo neto del mes 1 (medicion), S/            obtenido: 0.00           esperado: 0
+  [OK     ] Escenario base: flujo neto mensual en el piloto (meses 2 a 4), S/ obtenido: 29091.59       esperado: 29092
+  [OK     ] Escenario base: flujo neto del mes 5 (inicio de la extension), S/ obtenido: 26795.54       esperado: 26796
+  [OK     ] Escenario base: flujo neto del anio 1, S/                      obtenido: 317711.43      esperado: 317711
+  [OK     ] Escenario base: flujo neto de los anios 2 y 3, S/              obtenido: 349099.07      esperado: 349099
+  [OK     ] Escenario base: mes en que se recupera la inversion            obtenido: 2.00           esperado: 2
+     ventaA ventaB margen comision refuerzo transf capac
+mes2  38310 114898  64041     3064    13785   5928     0
+mes5  38310 114898  64041     3064    13785   5928  3257
+  [OK     ] Escenario base: venta adicional mensual de la solucion 1, S/   obtenido: 38310.48       esperado: 38310
+  [OK     ] Escenario base: venta adicional mensual de la solucion 2, S/   obtenido: 114898.10      esperado: 114898
+  [OK     ] Escenario base: venta adicional mensual total, S/              obtenido: 153208.57      esperado: 153209
+  [OK     ] Escenario base: margen bruto mensual adicional, S/             obtenido: 64041.47       esperado: 64041
+  [OK     ] Escenario base: comision mensual, S/                           obtenido: 3064.17        esperado: 3064
+  [OK     ] Escenario base: refuerzo mensual, S/                           obtenido: 13784.63       esperado: 13785
+  [OK     ] Escenario base: transferencias mensuales, S/                   obtenido: 5928.00        esperado: 5928
+  [OK     ] Escenario base: utilidad operativa mensual en regimen, S/      obtenido: 41264.67       esperado: 41265
+  [OK     ] Escenario base: utilidad operativa del mes 5, S/               obtenido: 38007.86       esperado: 38008
+  [OK     ] Escenario base: impuesto a la renta mensual en regimen, S/     obtenido: 12173.08       esperado: 12173
+  [OK     ] Escenario base: impuesto a la renta del mes 5, S/              obtenido: 11212.32       esperado: 11212
+  [OK     ] Anio 1: venta adicional de la solucion 1, S/                   obtenido: 421415.24      esperado: 421415
+  [OK     ] Anio 1: venta adicional de la solucion 2, S/                   obtenido: 1263879.05     esperado: 1263879
+  [OK     ] Anio 1: margen bruto adicional, S/                             obtenido: 704456.13      esperado: 704456
+  [OK     ] Anio 1: comision, S/                                           obtenido: 33705.89       esperado: 33706
+  [OK     ] Anio 1: refuerzo, S/                                           obtenido: 151630.92      esperado: 151631
+  [OK     ] Anio 1: transferencias, S/                                     obtenido: 65208.00       esperado: 65208
+  [OK     ] Anio 1: utilidad operativa, S/                                 obtenido: 450654.52      esperado: 450655
+  [OK     ] Anio 1: impuesto a la renta, S/                                obtenido: 132943.08      esperado: 132943
+         venta         margen       comision       refuerzo transferencias      operativa             ir           neto 
+       1838503         768498          36770         165416          71136         495176         146077         349099 
+  [OK     ] Anio en regimen: venta adicional de la solucion 1, S/          obtenido: 459725.71      esperado: 459726
+  [OK     ] Anio en regimen: venta adicional de la solucion 2, S/          obtenido: 1378777.14     esperado: 1378777
+  [OK     ] Anio en regimen: margen bruto adicional, S/                    obtenido: 768497.60      esperado: 768498
+  [OK     ] Anio en regimen: comision, S/                                  obtenido: 36770.06       esperado: 36770
+  [OK     ] Anio en regimen: costos recurrentes (refuerzo y transferencias), S/ obtenido: 236551.55      esperado: 236552
+  [OK     ] Anio en regimen: utilidad operativa, S/                        obtenido: 495175.99      esperado: 495176
+  [OK     ] Anio en regimen: impuesto a la renta, S/                       obtenido: 146076.92      esperado: 146077
+  [OK     ] Anio en regimen: flujo neto, S/                                obtenido: 349099.07      esperado: 349099
+  [OK     ] Objetivo: venta adicional anual, S/ millones                   obtenido: 1.8385         esperado: 1.84
+  [OK     ] Objetivo: venta adicional, % de la venta del canal             obtenido: 4.956          esperado: 5.0
+  [OK     ] Objetivo: conversion equivalente, %                            obtenido: 6.8122         esperado: 6.81
+  [OK     ] Objetivo: alza equivalente, pp                                 obtenido: 0.3217         esperado: 0.32
+  [OK     ] Objetivo: alza como % de la brecha de 1,12 pp                  obtenido: 28.72          esperado: 29
+  [OK     ] Objetivo: utilidad bruta adicional, S/ millones                obtenido: 0.7685         esperado: 0.77
+  [OK     ] Objetivo: venta por visitante, S/                              obtenido: 24.3549        esperado: 24.35
+  [OK     ] Objetivo: transacciones por asesor y semana                    obtenido: 27.551         esperado: 27.6
+  [OK     ] Escenario conservador: conversion equivalente, %               obtenido: 6.5737         esperado: 6.57
+  [OK     ] Escenario optimista: conversion equivalente, %                 obtenido: 6.9039         esperado: 6.90
+  [OK     ] Equilibrio de la solucion 1, % de la venta piloto              obtenido: 3.0625         esperado: 3.06
+  [OK     ] Equilibrio de la solucion 1, pp de conversion                  obtenido: 0.1925         esperado: 0.19
+  [OK     ] Equilibrio de la solucion 2, % de la venta de zapatillas       obtenido: 0.5404         esperado: 0.54
+  [OK     ] Equilibrio de la solucion 2, pp de conversion                  obtenido: 0.0351         esperado: 0.04
+  [OK     ] Unidades al mes que anulan el VAN de la solucion 2, escenario base obtenido: 5882.75        esperado: 5883
+  [OK     ] Ese volumen en veces la primera redistribucion                 obtenido: 7.939          esperado: 7.9
+  [OK     ] Sensibilidad: VAN base con tasa de 10%, S/                     obtenido: 869280.75      esperado: 869281
+  [OK     ] Sensibilidad: VAN base con tasa de 20%, S/                     obtenido: 762866.10      esperado: 762866
+  [OK     ] Sensibilidad: VAN base con el doble de unidades transferidas, S/ obtenido: 698686.83      esperado: 698687
+  [OK     ] Sensibilidad: VAN base con costo de S/15 por unidad transferida, S/ obtenido: 709359.88      esperado: 709360
+  [OK     ] Sensibilidad: VAN base con margen bruto de 38%, S/             obtenido: 696710.50      esperado: 696710
+      media       p_neg        var5       cvar5         p50 
+480080.9633      0.0506  -1216.8363 -95710.7670 508247.3590 
+  [OK     ] Monte Carlo: VAN medio, S/                                     obtenido: 480080.96      esperado: 480081
+  [OK     ] Monte Carlo: VAN mediano, S/                                   obtenido: 508247.36      esperado: 508247
+  [OK     ] Monte Carlo: probabilidad de VAN negativo, %                   obtenido: 5.060          esperado: 5.1
+  [OK     ] Monte Carlo: VaR al 5%, S/                                     obtenido: -1216.84       esperado: -1217
+  [OK     ] Monte Carlo: CVaR al 5%, S/                                    obtenido: -95710.77      esperado: -95711
+
+==============================================================================
+ 28. TABLA DE VERIFICACION
+==============================================================================
+ bloque indicador                                                                   obtenido                 
+ 1      Registros del libro (ambas categorias)                                      122329.00                
+ 1      Registros de la categoria The Box                                           103790.00                
+ 2      % transacciones con flujo cero, 2026                                        4.8371                   
+ 2      % transacciones con flujo cero, 2025                                        7.1073                   
+ 2      Hora 22 de 2026: transacciones                                              1532.00                  
+ 2      Hora 22 de 2026: visitas                                                    25.00                    
+ 3      Registros de la muestra depurada                                            97834.00                 
+ 3      % de los registros de la categoria                                          94.261                   
+ 3      Conversion 2026 sin depurar (tablero), %                                    6.8147                   
+ 3      Conversion 2026 depurada, %                                                 6.4744                   
+ 3      Sesgo al alza del tablero, pp                                               0.3403                   
+ 4      The Box: tiendas                                                            16.00                    
+ 4      The Box: flujo                                                              893219.00                
+ 4      The Box: conversion, %                                                      6.4815                   
+ 4      The Box: ticket, S/                                                         354.9019                 
+ 4      The Box: UPT                                                                1.43096                  
+ 4      The Box: precio por unidad, S/                                              248.0166                 
+ 4      Coolbrands: tiendas                                                         3.00                     
+ 4      Coolbrands: flujo                                                           150864.00                
+ 4      Coolbrands: conversion, %                                                   6.4515                   
+ 4      Coolbrands: ticket, S/                                                      177.4048                 
+ 4      Coolbrands: UPT                                                             2.08271                  
+ 4      Coolbrands: precio por unidad, S/                                           85.1799                  
+ 5      Flujo 2025                                                                  703705.00                
+ 5      Conversion 2025, %                                                          5.560995                 
+ 5      Conversion 2026, %                                                          6.481501                 
+ 5      Variacion de la conversion, pp                                              0.9205                   
+ 5      Ticket 2025, S/                                                             259.1308                 
+ 5      UPT 2025                                                                    1.630874                 
+ 5      UPT 2026                                                                    1.430960                 
+ 5      Precio por unidad 2025, S/                                                  158.8907                 
+ 5      Venta 2025, S/                                                              10140566.31              
+ 5      Venta 2026, S/                                                              20546687.88              
+ 5      Crecimiento del flujo, %                                                    26.931                   
+ 5      Crecimiento del ticket, %                                                   36.959                   
+ 5      Variacion de la UPT, %                                                      -12.258                  
+ 5      Crecimiento del precio por unidad, %                                        56.093                   
+ 5      Crecimiento de la venta, %                                                  102.619                  
+ 5      Aporte del flujo, %                                                         33.771                   
+ 5      Aporte de la conversion, %                                                  21.691                   
+ 5      Aporte del ticket, %                                                        44.538                   
+ 5      Tiendas comparables                                                         14.00                    
+ 5      Comparables: crecimiento de la venta, %                                     85.202                   
+ 5      Comparables: conversion 2026, %                                             6.546393                 
+ 5      Mejora interanual con todas las comparables, pp                             0.9854                   
+ 5      Mejora interanual sin tiendas con ruptura, pp                               1.1597                   
+ 6      Participacion del flujo de 18:00 a 20:59, %                                 37.708                   
+ 6      Participacion de las cinco horas de mayor flujo, %                          58.210                   
+ 6      Participacion del flujo de las 10:00, %                                     2.5371                   
+ 6      Conversion de las 10:00, %                                                  4.2053                   
+ 6      Conversion del resto de la jornada, %                                       6.5408                   
+ 6      Segunda hora de menor conversion, %                                         6.1768                   
+ 6      Ticket de las 10:00, S/                                                     323.4651                 
+ 6      Tabla por dia: participacion del flujo (7 dias)                             7 de 7                   
+ 6      Tabla por dia: conversion (7 dias)                                          7 de 7                   
+ 6      Tabla por dia: ticket (7 dias)                                              7 de 7                   
+ 7      Anexo B: conversion por tienda (16)                                         16 de 16                 
+ 7      Anexo B: semanas por tienda (16)                                            16 de 16                 
+ 7      Anexo B: flujo semanal por tienda (16)                                      16 de 16                 
+ 7      Anexo B: ticket por tienda (16)                                             16 de 16                 
+ 7      Anexo B: UPT por tienda (16)                                                16 de 16                 
+ 7      Factor entre la mayor y la menor conversion                                 1.7578                   
+ 7      Red de 16 tiendas: flujo semanal                                            27067.24                 
+ 7      Catorce tiendas: flujo semanal                                              25479.12                 
+ 7      Catorce tiendas: ticket, S/                                                 357.5177                 
+ 7      Catorce tiendas: UPT                                                        1.42877                  
+ 8      San Isidro, sem. 2-19: flujo semanal                                        554.94                   
+ 8      San Isidro, sem. 2-19: transacciones                                        59.89                    
+ 8      San Isidro, sem. 2-19: venta, S/                                            17508.04                 
+ 8      San Isidro, sem. 2-19: conversion, %                                        10.7919                  
+ 8      San Isidro, sem. 22-34: flujo semanal                                       937.69                   
+ 8      San Isidro, sem. 22-34: transacciones                                       44.15                    
+ 8      San Isidro, sem. 22-34: venta, S/                                           14947.63                 
+ 8      San Isidro, sem. 22-34: conversion, %                                       4.7088                   
+ 8      Tiendas excluidas: % del flujo                                              5.867                    
+ 8      Tiendas excluidas: % de la venta                                            5.042                    
+ 9      Conversion real, catorce tiendas, %                                         6.490519                 
+ 9      Percentil 75 ponderado, %                                                   7.154998                 
+ 9      Percentil 90 ponderado (valor ideal), %                                     7.611946                 
+ 9      Mejor semana propia ponderada, %                                            8.246769                 
+ 9      Brecha contra el percentil 75, pp                                           0.6645                   
+ 9      Brecha contra el percentil 90, pp                                           1.1214                   
+ 9      Brecha contra la mejor semana, pp                                           1.7563                   
+ 9      Brecha contra el referente de 10%, pp                                       3.5095                   
+ 9      Semanas-tienda validas, catorce tiendas                                     439.00                   
+ 9      Semanas-tienda sobre 10%, catorce tiendas                                   10.00                    
+ 9      Semanas-tienda sobre 10%, % de las catorce                                  2.278                    
+ 9      Semanas-tienda validas, dieciseis tiendas                                   499.00                   
+ 9      Semanas-tienda sobre 10%, dieciseis tiendas                                 20.00                    
+ 10     Panel: observaciones                                                        37546.00                 
+ 10     Panel: coeficiente de ln(flujo)                                             -0.0128534               
+ 10     Panel: error estandar                                                       0.0012556                
+ 10     Panel: valor p                                                              1.37e-07                 
+ 10     Efecto de +10% de flujo, pp                                                 -0.1225                  
+ 10     VI: observaciones                                                           36086.00                 
+ 10     VI: coeficiente de primera etapa                                            0.132249                 
+ 10     VI: estadistico t de primera etapa                                          7.6203                   
+ 10     VI: coeficiente de ln(flujo)                                                -0.0198361               
+ 10     VI: error estandar                                                          0.0047093                
+ 10     VI: valor p                                                                 0.00102                  
+ 10     OLS en la muestra de la VI: coeficiente                                     -0.0122836               
+ 10     Elasticidad transacciones-flujo, MCO                                        0.67730                  
+ 10     Elasticidad transacciones-flujo, VI                                         0.66037                  
+ 11     Spearman flujo semanal - conversion                                         -0.75824                 
+ 11     Spearman: valor p                                                           0.00252                  
+ 11     Pearson flujo semanal - conversion                                          -0.43789                 
+ 11     Pearson: valor p                                                            0.11735                  
+ 11     R2 de la tienda                                                             0.44209                  
+ 11     R2 de la semana calendario                                                  0.15903                  
+ 11     R2 de tienda y semana                                                       0.62201                  
+ 11     Desviacion entre tiendas, pp                                                1.0028                   
+ 11     Desviacion dentro de cada tienda, pp                                        0.9939                   
+ 12     Conversion de las semanas frontera, %                                       7.9268                   
+ 12     Conversion de las demas semanas, %                                          6.3171                   
+ 12     Flujo de las semanas frontera / demas (mediana)                             0.890629                 
+ 12     Componente de composicion con MCO, pp                                       0.1489                   
+ 12     Componente de composicion con VI, pp                                        0.2298                   
+ 12     Brecha atribuible a la gestion, MCO, pp                                     0.9725                   
+ 12     Brecha atribuible a la gestion, VI, pp                                      0.8917                   
+ 12     Semanas frontera                                                            53.00                    
+ 12     Semanas frontera desde la semana 11                                         52.00                    
+ 12     Racha maxima de semanas frontera consecutivas                               3.00                     
+ 12     Conversion 2026, semanas 2 a 10, %                                          5.9766                   
+ 12     Conversion 2026, semanas 11 a 34, %                                         6.6797                   
+ 12     Conversion 2025, semanas 2 a 10, %                                          5.2946                   
+ 12     Conversion 2025, semanas 11 a 34, %                                         5.4422                   
+ 12     Brecha recalculada sobre semanas 11 a 34, pp                                1.0077                   
+ 12     Tendencia de la conversion de red, pp por semana                            0.02330                  
+ 13     Segmentos: conversion de las demas semanas                                  7 de 7                   
+ 13     Segmentos: conversion de las semanas frontera                               7 de 7                   
+ 13     Segmentos: aporte, pp                                                       7 de 7                   
+ 13     Segmentos: participacion acumulada, %                                       7 de 7                   
+ 13     Suma de los aportes, pp                                                     1.6342                   
+ 13     Diferencia simple frontera - demas, pp                                      1.6098                   
+ 13     Alto flujo: ventaja de la frontera en punta, pp                             1.8033                   
+ 13     Alto flujo: ventaja de la frontera en valle, pp                             0.8740                   
+ 13     Otras doce: ventaja de la frontera en punta, pp                             1.8273                   
+ 13     Otras doce: ventaja de la frontera en valle, pp                             1.7744                   
+ 13     Alto flujo: % de la venta de las catorce tiendas                            37.557                   
+ 13     Alto flujo: % de la venta de la red de dieciseis                            35.664                   
+ 13     Apertura: conversion de las 10:00, %                                        4.2092                   
+ 13     Apertura: conversion del resto del dia, %                                   6.5458                   
+ 13     Apertura: ganancia si iguala al resto, pp                                   0.05526                  
+ 13     Apertura: % de la brecha                                                    4.928                    
+ 14     Observaciones semana-tienda                                                 396.00                   
+ 14     Crecimiento exigido por la meta 2026, %                                     145.201                  
+ 14     Crecimiento logrado, %                                                      84.502                   
+ 14     Meta vigente: % semanas-tienda >= 80%                                       38.384                   
+ 14     Meta vigente: % semanas-tienda >= 100%                                      5.808                    
+ 14     Meta con crecimiento de 84.5%: >= 80%                                       64.646                   
+ 14     Meta con crecimiento de 84.5%: >= 100%                                      45.202                   
+ 14     Meta con crecimiento de 65.0%: >= 80%                                       75.505                   
+ 14     Meta con crecimiento de 65.0%: >= 100%                                      52.778                   
+ 14     Meta con crecimiento de 60.0%: >= 80%                                       77.525                   
+ 14     Meta con crecimiento de 60.0%: >= 100%                                      56.313                   
+ 14     Meta con crecimiento de 40.0%: >= 80%                                       87.626                   
+ 14     Meta con crecimiento de 40.0%: >= 100%                                      69.192                   
+ 14     Tiendas cruzadas                                                            14.00                    
+ 14     Correlacion cumplimiento - conversion                                       0.08476                  
+ 14     Correlacion: valor p                                                        0.77327                  
+ 15     Factor de estacionalidad                                                    1.901155                 
+ 15     Flujo de la semana 51 de 2025                                               66775.00                 
+ 15     Flujo de la semana 52 de 2025                                               90763.00                 
+ 15     Promedio semanal de flujo de 2025                                           25727.92                 
+ 15     Flujo anual equivalente                                                     1598511.70               
+ 15     Transacciones anuales adicionales                                           17926.15                 
+ 15     Facturacion no capturada, S/ millones                                       6.4089                   
+ 15     Venta por visitante actual, S/                                              23.2048                  
+ 15     Venta por visitante en la frontera, S/                                      27.2141                  
+ 15     Brecha de venta por visitante, S/                                           4.0093                   
+ 15     1 pp de conversion con perfil estacional, S/ millones                       5.7150                   
+ 15     1 pp de conversion sin ajuste estacional, S/ millones                       4.7368                   
+ 15     Venta anual del canal, catorce tiendas, S/ millones                         37.0931                  
+ 15     Facturacion no capturada, % de la venta anual                               17.278                   
+ 15     Asesores declarados, catorce tiendas                                        63.00                    
+ 15     Transacciones por asesor por semana                                         26.250                   
+ 15     Transacciones por asesor en la frontera                                     30.785                   
+ 15     Brecha de transacciones por asesor                                          4.535                    
+ 15     Brecha de venta semanal por asesor, S/                                      1621.48                  
+ 15     Oportunidad de la UPT, S/ millones                                          3.6873                   
+ 16     Tiendas The Box en la base de stock                                         16.00                    
+ 16     Margen bruto, dieciseis tiendas, %                                          41.800                   
+ 16     Utilidad bruta no capturada, S/ millones                                    2.6789                   
+ 17     Larcomar 2: domingos de referencia                                          33.00                    
+ 17     Larcomar 2: flujo esperado                                                  83.245                   
+ 17     Larcomar 2: percentil del flujo observado                                   21.21                    
+ 17     Larcomar 2: ventas esperadas                                                4.376                    
+ 17     Larcomar 2: percentil de las ventas observadas                              36.36                    
+ 17     Larcomar 2: conversion esperada, %                                          5.2571                   
+ 17     Larcomar 2: limite inferior Wilson, %                                       2.4571                   
+ 17     Larcomar 2: limite superior Wilson, %                                       14.9975                  
+ 17     Larcomar 2: ingresos por asesor y hora, sistema                             11.892                   
+ 17     Jockey Plaza: flujo esperado                                                331.182                  
+ 17     Jockey Plaza: ventas esperadas                                              19.711                   
+ 17     Jockey Plaza: conversion esperada, %                                        5.9517                   
+ 17     Jockey Plaza: limite inferior Wilson, %                                     0.2821                   
+ 17     Jockey Plaza: limite superior Wilson, %                                     1.8482                   
+ 17     Jockey Plaza: ingresos por asesor y hora, sistema                           28.798                   
+ 17     Jockey Plaza: flujo observado (552) sobre el maximo                         466.6                    
+ 17     Jockey Plaza: ventas observadas (4) bajo el minimo                          8.6                      
+ 17     Carga Jockey / Larcomar 2 (ambas segun sistema)                             2.422                    
+ 18     Zapatillas: % de la venta en S/ de S35-S38 (14 tiendas)                     90.526                   
+ 18     Modelos-color de zapatilla con curva valida                                 462.00                   
+ 18     Tienda x modelo-color exhibidos, catorce tiendas                            1782.00                  
+ 18     Cobertura de demanda ponderada, %                                           73.556                   
+ 18     % de modelos exhibidos con curva incompleta                                 80.808                   
+ 18     % de modelos exhibidos con cobertura < 50%                                  31.481                   
+ 18     % de la demanda esperada sin talla disponible                               26.444                   
+ 18     Demanda faltante en tallas vendidas en S35-S38, %                           52.023                   
+ 18     Demanda faltante repuesta al 26/09, %                                       20.852                   
+ 18     Tallas nucleo: modelos exhibidos con al menos una                           1764.00                  
+ 18     Tallas nucleo: % al que le falta al menos una                               73.186                   
+ 18     Tallas nucleo: % al que le faltan dos o mas                                 49.036                   
+ 18     Temporada 2026: % de la demanda esperada                                    54.397                   
+ 18     Temporada 2026: cobertura ponderada, %                                      68.267                   
+ 18     Poisson: observaciones                                                      1457.00                  
+ 18     Poisson: elasticidad venta - cobertura                                      0.42120                  
+ 18     Poisson: error estandar                                                     0.09388                  
+ 18     Poisson: valor p                                                            7.244e-06                
+ 18     Poisson con error agrupado por modelo: valor p                              0.005588                 
+ 18     Poisson, solo temporada 2026: elasticidad                                   0.52544                  
+ 18     Poisson, solo productos regulares: elasticidad                              0.40471                  
+ 18     Cobertura < 50%: coeficiente frente a curva completa                        -0.40683                 
+ 18     Cobertura < 50%: valor p                                                    0.0008139                
+ 18     Cobertura 50 a 99%: sin diferencia significativa (p > 0,05)                 0.247                    
+ 18     Venta de zapatillas perdida con la elasticidad estimada, %                  14.098                   
+ 18     Venta perdida usando solo el tramo < 50%, %                                 6.491                    
+ 18     Cota en conversion, elasticidad, 1 unidad por transaccion, pp               0.9858                   
+ 18     Cota en conversion, elasticidad, UPT de red, pp                             0.6900                   
+ 18     Cota en conversion, tramo < 50%, 1 unidad por transaccion, pp               0.4170                   
+ 18     Cota en conversion, tramo < 50%, UPT de red, pp                             0.2919                   
+ 18     Spearman cobertura de tienda - conversion                                   -0.09011                 
+ 18     Spearman cobertura - conversion: no significativo                           0.762                    
+ 18     Semanas de cobertura, minimo (Mall Plaza Trujillo)                          5.0704                   
+ 18     Semanas de cobertura, maximo (La Rambla Brasil)                             22.9932                  
+ 18     Semanas de cobertura, Jockey Plaza                                          5.8218                   
+ 18     Spearman semanas de cobertura - venta                                       -0.80220                 
+ 18     Spearman semanas de cobertura - venta: valor p                              0.0009148                
+ 19     Punta: % del flujo esperado                                                 46.8787                  
+ 19     Punta: % de las horas-persona, semana 34                                    32.2200                  
+ 19     Punta: % de las horas-persona, semana 38                                    33.0402                  
+ 19     Visitas por persona y hora en punta, semana 34                              11.2574                  
+ 19     Visitas por persona y hora en valle, semana 34                              6.2158                   
+ 19     Visitas por persona y hora en punta, semana 38                              11.1775                  
+ 19     Visitas por persona y hora en valle, semana 38                              6.5723                   
+ 19     Tiendas con mas visitas por persona en punta que en valle                   14.00                    
+ 19     Valle: % del flujo esperado                                                 50.7506                  
+ 19     Punta: % de las horas-persona, minimo de las semanas 34 a 38                31.9793                  
+ 19     Punta: % de las horas-persona, maximo de las semanas 34 a 38                33.5851                  
+ 19     Valle: % de las horas-persona supera 60% en todas las semanas               60.28                    
+ 19     Hora de mayor flujo esperado                                                19.00                    
+ 19     Maximo de horas-persona entre las 14:00 y las 16:00                         15                       
+ 19     19:00: % del flujo esperado del dia                                         13.1756                  
+ 19     19:00: % de las horas-persona del dia                                       8.0000                   
+ 19     19:00: visitas por persona                                                  12.8093                  
+ 19     Turnos de 11 horas o mas, % del total, semana 34                            4.700                    
+ 19     Turnos de 11 horas o mas, % del total, semana 38                            33.100                   
+ 19     Dos turnos mas frecuentes, semanas 34 a 38                                  14:00-22:00 y 10:00-19:00
+ 19     Semana 34: celdas tienda-dia-hora cruzadas                                  1150.00                  
+ 19     Semana 34: conversion por tercio de visitas por persona                     3 de 3                   
+ 19     Semana 34: coeficiente de ln(visitas por persona)                           -0.011190                
+ 19     Semana 34: valor p (no significativo)                                       0.29727                  
+ 20     Objetivo central: conversion meta, %                                        7.3822                   
+ 20     Objetivo central: mejora sobre la linea base, pp                            0.8917                   
+ 20     Fin: venta por visitante con la meta, S/                                    26.3926                  
+ 20     Fin: transacciones por asesor por semana con la meta                        29.856                   
+ 20     Fin: transacciones anuales adicionales                                      14253.46                 
+ 20     Fin: facturacion adicional, S/ millones                                     5.0959                   
+ 20     Fin: facturacion adicional, % de la venta anual                             13.738                   
+ 20     Fin: utilidad bruta adicional, S/ millones                                  2.1301                   
+ 21     Tipos de turno del modelo presentes en la hoja de turnos                    20 de 20                 
+ 21     Escenario A: problemas tienda-dia con solucion optima                       98.00                    
+ 21     Horas-persona de atencion, plan de la semana 38                             3411.00                  
+ 21     Escenario A: horas-persona de atencion                                      3330.00                  
+ 21     Punta: carga actual                                                         11.1775                  
+ 21     Valle: carga actual                                                         6.5723                   
+ 21     Escenario A: carga en la punta                                              9.8184                   
+ 21     Escenario A: carga en el valle                                              7.3241                   
+ 21     Escenario A: % de las horas-persona en la punta                             38.529                   
+ 21     19:00: carga actual                                                         12.7815                  
+ 21     Escenario A: carga a las 19:00                                              10.5059                  
+ 21     Carga total del dia, plan actual                                            7.8779                   
+ 21     Carga total del dia, escenario A                                            8.0695                   
+ 21     Escenario A: carga entre las 14:00 y las 16:00, minimo                      6.5940                   
+ 21     Escenario A: carga entre las 14:00 y las 16:00, maximo                      7.8166                   
+ 21     Escenario A: tiendas con menor carga en la punta                            14.00                    
+ 21     Solo turnos de hasta 9 horas: dias-tienda sin solucion factible             33.00                    
+ 21     Escenario B: problemas resueltos con solucion optima                        10.00                    
+ 21     Jockey Plaza: carga actual en la punta                                      15.2988                  
+ 21     Mall Plaza Trujillo: carga actual en la punta                               16.5712                  
+ 21     Jockey Plaza: carga en la punta con 0 refuerzos                             13.6940                  
+ 21     Mall Plaza Trujillo: carga en la punta con 0 refuerzos                      15.0647                  
+ 21     Jockey Plaza: carga en la punta con 7 refuerzos                             11.5191                  
+ 21     Mall Plaza Trujillo: carga en la punta con 7 refuerzos                      12.8887                  
+ 21     Jockey Plaza: carga en la punta con 14 refuerzos                            10.0423                  
+ 21     Mall Plaza Trujillo: carga en la punta con 14 refuerzos                     11.2620                  
+ 21     Jockey Plaza: carga en la punta con 21 refuerzos                            9.1081                   
+ 21     Mall Plaza Trujillo: carga en la punta con 21 refuerzos                     9.9144                   
+ 21     Jockey Plaza: carga en la punta con 28 refuerzos                            8.2279                   
+ 21     Mall Plaza Trujillo: carga en la punta con 28 refuerzos                     9.0979                   
+ 21     Jockey Plaza: horas del plan de la semana 38 (10:00 a 21:59)                382.00                   
+ 21     Mall Plaza Trujillo: horas del plan de la semana 38 (10:00 a 21:59)         410.00                   
+ 21     Jockey Plaza: 21 refuerzos, % de horas adicionales                          21.990                   
+ 21     Mall Plaza Trujillo: 21 refuerzos, % de horas adicionales                   20.488                   
+ 22     Tiendas The Box en Lima                                                     8.00                     
+ 22     Tiendas The Box fuera de Lima                                               8.00                     
+ 22     Demanda faltante cubierta, mismo departamento, %                            12.424                   
+ 22     Demanda faltante cubierta, ambos pasos, %                                   28.496                   
+ 22     Unidades transferidas dentro del mismo departamento                         427.00                   
+ 22     Unidades por el despacho semanal desde Lima                                 314.00                   
+ 22     Unidades totales                                                            741.00                   
+ 22     Cobertura ponderada antes, %                                                73.556                   
+ 22     Cobertura ponderada solo con el paso 1, %                                   76.841                   
+ 22     Cobertura ponderada despues de ambos pasos, %                               81.091                   
+ 22     Modelos con cobertura menor a 50%, antes, %                                 31.481                   
+ 22     Modelos con cobertura menor a 50%, despues, %                               23.962                   
+ 22     Mejor cobertura de tienda antes de redistribuir, %                          80.087                   
+ 22     Peor cobertura de tienda antes de redistribuir, %                           67.402                   
+ 22     Peor cobertura de tienda despues de redistribuir, %                         76.608                   
+ 22     Semanas de cobertura de la red                                              9.7217                   
+ 23     Fase II: alertas de medicion en San Isidro                                  10.00                    
+ 23     Fase II: alertas de medicion en Mega Plaza Chimbote                         0.00                     
+ 23     Fase II: alertas de medicion en las catorce tiendas                         0.00                     
+ 23     Fase II: tiendas de las catorce con fase I                                  13.00                    
+ 23     Fase II: semanas de San Isidro bajo el limite inferior                      14.00                    
+ 23     Fase II: semanas-tienda vigiladas, catorce tiendas                          195.00                   
+ 23     Sobredispersion mediana (sigma z) de las catorce tiendas                    1.1637                   
+ 23     San Isidro: primera semana con alerta                                       21.00                    
+ 23     Catorce tiendas, 2026: % de transacciones en horas con flujo cero           3.9099                   
+ 23     Catorce tiendas, 2026: % de horas con mas transacciones que visitas         0.0771                   
+ 24     Prueba retrospectiva: semanas-tienda evaluadas                              300.00                   
+ 24     Meta vigente: % semanas-tienda >= 80%                                       36.333                   
+ 24     Metodo: % semanas-tienda >= 80%                                             72.333                   
+ 24     Meta vigente: % semanas-tienda >= 100%                                      4.667                    
+ 24     Metodo: % semanas-tienda >= 100%                                            46.333                   
+ 24     Meta vigente: cumplimiento mediano, %                                       71.641                   
+ 24     Metodo: cumplimiento mediano, %                                             97.212                   
+ 24     Meta vigente: desviacion absoluta media del cumplimiento, pp                28.358                   
+ 24     Metodo: desviacion absoluta media del cumplimiento, pp                      25.362                   
+ 24     Metodo con exigencia de 5%: % semanas-tienda >= 80%                         68.667                   
+ 24     Metodo con exigencia de 5%: % semanas-tienda >= 100%                        38.000                   
+ 24     Metodo con exigencia de 5%: cumplimiento mediano, %                         92.583                   
+ 24     Metodo con exigencia de 5%: desviacion absoluta media, pp                   24.902                   
+ 25     Jockey Plaza: refuerzos por dia (L a D) con 21 por semana                   3 2 1 2 2 5 6            
+ 25     Jockey miercoles: personas programadas                                      5.00                     
+ 25     Jockey miercoles: horas-persona, plan y modelo                              48.00                    
+ 25     Jockey miercoles: horas-persona del plan                                    48.00                    
+ 25     Jockey miercoles: carga en la punta, plan actual                            14.3723                  
+ 25     Jockey miercoles: carga en la punta, misma dotacion                         10.5901                  
+ 25     Jockey miercoles: carga en la punta, con un refuerzo                        9.1460                   
+ 25     Jockey miercoles: personas a las 19:00, plan actual                         3.00                     
+ 25     Jockey miercoles: personas a las 19:00, modelo                              5.00                     
+ 25     Jockey sabado: personas programadas                                         7.00                     
+ 25     Jockey sabado: carga en la punta, plan actual                               14.1472                  
+ 25     Jockey sabado: carga en la punta, misma dotacion                            14.1472                  
+ 25     Jockey sabado: carga en la punta, con cinco refuerzos                       8.4281                   
+ 26     Ejemplo: modelo y talla                                                     3ME10101430-M-WHT 8      
+ 26     Ejemplo: tienda de Lima con excedente                                       TB LMMIR 2               
+ 26     Ejemplo: unidades disponibles en el origen                                  2.00                     
+ 26     Unidades que recibe Jockey Plaza                                            63.00                    
+ 26     Unidades que recibe Mall Plaza Trujillo                                     97.00                    
+ 26     Jockey Plaza: cobertura antes, %                                            76.868                   
+ 26     Jockey Plaza: cobertura despues, %                                          82.259                   
+ 26     Mall Plaza Trujillo: cobertura antes, %                                     72.075                   
+ 26     Mall Plaza Trujillo: cobertura despues, %                                   81.101                   
+ 27     Venta anual de Jockey Plaza y Mall Plaza Trujillo, S/ millones              13.9311                  
+ 27     Conversion de Jockey Plaza y Mall Plaza Trujillo, %                         6.2872                   
+ 27     Costo laboral anual de un asesor, S/                                        36138.67                 
+ 27     Horas efectivas al anio                                                     1908.57                  
+ 27     Costo laboral por hora efectiva, S/                                         18.9349                  
+ 27     Venta por unidad / precio de lista en el archivo de stock (New Balance 530) 0.84565                  
+ 27     Inversion inicial, S/                                                       6914.79                  
+ 27     Horas de refuerzo por anio, dos tiendas                                     8736.00                  
+ 27     Costo anual del refuerzo, S/                                                165415.55                
+ 27     Costo anual de transferencias, S/                                           71136.00                 
+ 27     Capacitacion de la extension (mes 5), S/                                    3256.81                  
+ 27     Efecto base de la solucion 2 sobre la venta de zapatillas, %                4.106                    
+ 27     Efecto optimista de la solucion 2, %                                        5.169                    
+ 27     VAN, escenario sin efecto, S/                                               -401632.90               
+ 27     VAN, escenario conservador, S/                                              -87840.41                
+ 27     VAN, escenario base, S/                                                     812652.39                
+ 27     VAN, escenario optimista, S/                                                1158839.43               
+ 27     VAN de la solucion 1, escenario base, S/                                    21853.06                 
+ 27     VAN de la solucion 2, escenario base, S/                                    790799.34                
+ 27     VAN de la solucion 1, escenario conservador, S/                             -189772.99               
+ 27     VAN de la solucion 2, escenario conservador, S/                             101932.58                
+ 27     Escenario base: flujo neto del mes 1 (medicion), S/                         0.00                     
+ 27     Escenario base: flujo neto mensual en el piloto (meses 2 a 4), S/           29091.59                 
+ 27     Escenario base: flujo neto del mes 5 (inicio de la extension), S/           26795.54                 
+ 27     Escenario base: flujo neto del anio 1, S/                                   317711.43                
+ 27     Escenario base: flujo neto de los anios 2 y 3, S/                           349099.07                
+ 27     Escenario base: mes en que se recupera la inversion                         2.00                     
+ 27     Escenario base: venta adicional mensual de la solucion 1, S/                38310.48                 
+ 27     Escenario base: venta adicional mensual de la solucion 2, S/                114898.10                
+ 27     Escenario base: venta adicional mensual total, S/                           153208.57                
+ 27     Escenario base: margen bruto mensual adicional, S/                          64041.47                 
+ 27     Escenario base: comision mensual, S/                                        3064.17                  
+ 27     Escenario base: refuerzo mensual, S/                                        13784.63                 
+ 27     Escenario base: transferencias mensuales, S/                                5928.00                  
+ 27     Escenario base: utilidad operativa mensual en regimen, S/                   41264.67                 
+ 27     Escenario base: utilidad operativa del mes 5, S/                            38007.86                 
+ 27     Escenario base: impuesto a la renta mensual en regimen, S/                  12173.08                 
+ 27     Escenario base: impuesto a la renta del mes 5, S/                           11212.32                 
+ 27     Anio 1: venta adicional de la solucion 1, S/                                421415.24                
+ 27     Anio 1: venta adicional de la solucion 2, S/                                1263879.05               
+ 27     Anio 1: margen bruto adicional, S/                                          704456.13                
+ 27     Anio 1: comision, S/                                                        33705.89                 
+ 27     Anio 1: refuerzo, S/                                                        151630.92                
+ 27     Anio 1: transferencias, S/                                                  65208.00                 
+ 27     Anio 1: utilidad operativa, S/                                              450654.52                
+ 27     Anio 1: impuesto a la renta, S/                                             132943.08                
+ 27     Anio en regimen: venta adicional de la solucion 1, S/                       459725.71                
+ 27     Anio en regimen: venta adicional de la solucion 2, S/                       1378777.14               
+ 27     Anio en regimen: margen bruto adicional, S/                                 768497.60                
+ 27     Anio en regimen: comision, S/                                               36770.06                 
+ 27     Anio en regimen: costos recurrentes (refuerzo y transferencias), S/         236551.55                
+ 27     Anio en regimen: utilidad operativa, S/                                     495175.99                
+ 27     Anio en regimen: impuesto a la renta, S/                                    146076.92                
+ 27     Anio en regimen: flujo neto, S/                                             349099.07                
+ 27     Objetivo: venta adicional anual, S/ millones                                1.8385                   
+ 27     Objetivo: venta adicional, % de la venta del canal                          4.956                    
+ 27     Objetivo: conversion equivalente, %                                         6.8122                   
+ 27     Objetivo: alza equivalente, pp                                              0.3217                   
+ 27     Objetivo: alza como % de la brecha de 1,12 pp                               28.72                    
+ 27     Objetivo: utilidad bruta adicional, S/ millones                             0.7685                   
+ 27     Objetivo: venta por visitante, S/                                           24.3549                  
+ 27     Objetivo: transacciones por asesor y semana                                 27.551                   
+ 27     Escenario conservador: conversion equivalente, %                            6.5737                   
+ 27     Escenario optimista: conversion equivalente, %                              6.9039                   
+ 27     Equilibrio de la solucion 1, % de la venta piloto                           3.0625                   
+ 27     Equilibrio de la solucion 1, pp de conversion                               0.1925                   
+ 27     Equilibrio de la solucion 2, % de la venta de zapatillas                    0.5404                   
+ 27     Equilibrio de la solucion 2, pp de conversion                               0.0351                   
+ 27     Unidades al mes que anulan el VAN de la solucion 2, escenario base          5882.75                  
+ 27     Ese volumen en veces la primera redistribucion                              7.939                    
+ 27     Sensibilidad: VAN base con tasa de 10%, S/                                  869280.75                
+ 27     Sensibilidad: VAN base con tasa de 20%, S/                                  762866.10                
+ 27     Sensibilidad: VAN base con el doble de unidades transferidas, S/            698686.83                
+ 27     Sensibilidad: VAN base con costo de S/15 por unidad transferida, S/         709359.88                
+ 27     Sensibilidad: VAN base con margen bruto de 38%, S/                          696710.50                
+ 27     Monte Carlo: VAN medio, S/                                                  480080.96                
+ 27     Monte Carlo: VAN mediano, S/                                                508247.36                
+ 27     Monte Carlo: probabilidad de VAN negativo, %                                5.060                    
+ 27     Monte Carlo: VaR al 5%, S/                                                  -1216.84                 
+ 27     Monte Carlo: CVaR al 5%, S/                                                 -95710.77                
+ esperado                  estado
+ 122329                    OK    
+ 103790                    OK    
+ 4.84                      OK    
+ 7.11                      OK    
+ 1532                      OK    
+ 25                        OK    
+ 97834                     OK    
+ 94.3                      OK    
+ 6.81                      OK    
+ 6.47                      OK    
+ 0.34                      OK    
+ 16                        OK    
+ 893219                    OK    
+ 6.48                      OK    
+ 354.90                    OK    
+ 1.431                     OK    
+ 248.02                    OK    
+ 3                         OK    
+ 150864                    OK    
+ 6.45                      OK    
+ 177.40                    OK    
+ 2.083                     OK    
+ 85.18                     OK    
+ 703705                    OK    
+ 5.5610                    OK    
+ 6.4815                    OK    
+ 0.92                      OK    
+ 259.13                    OK    
+ 1.6309                    OK    
+ 1.4310                    OK    
+ 158.89                    OK    
+ 10140566                  OK    
+ 20546688                  OK    
+ 26.9                      OK    
+ 37.0                      OK    
+ -12.3                     OK    
+ 56.1                      OK    
+ 102.6                     OK    
+ 33.8                      OK    
+ 21.7                      OK    
+ 44.5                      OK    
+ 14                        OK    
+ 85.2                      OK    
+ 6.5464                    OK    
+ 0.99                      OK    
+ 1.16                      OK    
+ 37.7                      OK    
+ 58.2                      OK    
+ 2.54                      OK    
+ 4.21                      OK    
+ 6.54                      OK    
+ 6.18                      OK    
+ 323.47                    OK    
+ 7 de 7                    OK    
+ 7 de 7                    OK    
+ 7 de 7                    OK    
+ 16 de 16                  OK    
+ 16 de 16                  OK    
+ 16 de 16                  OK    
+ 16 de 16                  OK    
+ 16 de 16                  OK    
+ 1.76                      OK    
+ 27067                     OK    
+ 25479                     OK    
+ 357.52                    OK    
+ 1.429                     OK    
+ 555                       OK    
+ 60                        OK    
+ 17508                     OK    
+ 10.79                     OK    
+ 938                       OK    
+ 44                        OK    
+ 14948                     OK    
+ 4.71                      OK    
+ 5.9                       OK    
+ 5.0                       OK    
+ 6.4905                    OK    
+ 7.1550                    OK    
+ 7.6119                    OK    
+ 8.2468                    OK    
+ 0.66                      OK    
+ 1.12                      OK    
+ 1.76                      OK    
+ 3.51                      OK    
+ 439                       OK    
+ 10                        OK    
+ 2.3                       OK    
+ 499                       OK    
+ 20                        OK    
+ 37546                     OK    
+ -0.01285                  OK    
+ 0.00126                   OK    
+ < 0.001                   OK    
+ -0.12                     OK    
+ 36086                     OK    
+ 0.1322                    OK    
+ 7.62                      OK    
+ -0.01984                  OK    
+ 0.00471                   OK    
+ 0.001                     OK    
+ -0.01228                  OK    
+ 0.677                     OK    
+ 0.660                     OK    
+ -0.758                    OK    
+ 0.003                     OK    
+ -0.438                    OK    
+ 0.117                     OK    
+ 0.442                     OK    
+ 0.159                     OK    
+ 0.622                     OK    
+ 1.00                      OK    
+ 0.99                      OK    
+ 7.93                      OK    
+ 6.32                      OK    
+ 0.8906                    OK    
+ 0.15                      OK    
+ 0.23                      OK    
+ 0.97                      OK    
+ 0.89                      OK    
+ 53                        OK    
+ 52                        OK    
+ 3                         OK    
+ 5.98                      OK    
+ 6.68                      OK    
+ 5.29                      OK    
+ 5.44                      OK    
+ 1.01                      OK    
+ 0.023                     OK    
+ 7 de 7                    OK    
+ 7 de 7                    OK    
+ 7 de 7                    OK    
+ 7 de 7                    OK    
+ 1.63                      OK    
+ 1.61                      OK    
+ 1.80                      OK    
+ 0.87                      OK    
+ 1.83                      OK    
+ 1.77                      OK    
+ 37.6                      OK    
+ 35.7                      OK    
+ 4.21                      OK    
+ 6.55                      OK    
+ 0.055                     OK    
+ 4.9                       OK    
+ 396                       OK    
+ 145.2                     OK    
+ 84.5                      OK    
+ 38.4                      OK    
+ 5.8                       OK    
+ 64.6                      OK    
+ 45.2                      OK    
+ 75.5                      OK    
+ 52.8                      OK    
+ 77.5                      OK    
+ 56.3                      OK    
+ 87.6                      OK    
+ 69.2                      OK    
+ 14                        OK    
+ 0.085                     OK    
+ 0.773                     OK    
+ 1.9012                    OK    
+ 66775                     OK    
+ 90763                     OK    
+ 25728                     OK    
+ 1598512                   OK    
+ 17926                     OK    
+ 6.41                      OK    
+ 23.20                     OK    
+ 27.21                     OK    
+ 4.01                      OK    
+ 5.71                      OK    
+ 4.74                      OK    
+ 37.09                     OK    
+ 17.3                      OK    
+ 63                        OK    
+ 26.2                      OK    
+ 30.8                      OK    
+ 4.5                       OK    
+ 1621                      OK    
+ 3.69                      OK    
+ 16                        OK    
+ 41.8                      OK    
+ 2.68                      OK    
+ 33                        OK    
+ 83.2                      OK    
+ 21                        OK    
+ 4.4                       OK    
+ 36                        OK    
+ 5.26                      OK    
+ 2.46                      OK    
+ 15.00                     OK    
+ 11.9                      OK    
+ 331.2                     OK    
+ 19.7                      OK    
+ 5.95                      OK    
+ 0.28                      OK    
+ 1.85                      OK    
+ 28.8                      OK    
+ < 552                     OK    
+ > 4                       OK    
+ 2.4                       OK    
+ 90.5                      OK    
+ 462                       OK    
+ 1782                      OK    
+ 73.6                      OK    
+ 80.8                      OK    
+ 31.5                      OK    
+ 26.4                      OK    
+ 52.0                      OK    
+ 20.9                      OK    
+ 1764                      OK    
+ 73.2                      OK    
+ 49.0                      OK    
+ 54.4                      OK    
+ 68.3                      OK    
+ 1457                      OK    
+ 0.421                     OK    
+ 0.094                     OK    
+ < 0.001                   OK    
+ < 0.01                    OK    
+ 0.525                     OK    
+ 0.405                     OK    
+ -0.407                    OK    
+ < 0.001                   OK    
+ > 0.05                    OK    
+ 14.1                      OK    
+ 6.5                       OK    
+ 0.99                      OK    
+ 0.69                      OK    
+ 0.42                      OK    
+ 0.29                      OK    
+ -0.090                    OK    
+ > 0.05                    OK    
+ 5.07                      OK    
+ 22.99                     OK    
+ 5.82                      OK    
+ -0.802                    OK    
+ < 0.001                   OK    
+ 46.88                     OK    
+ 32.22                     OK    
+ 33.04                     OK    
+ 11.26                     OK    
+ 6.22                      OK    
+ 11.18                     OK    
+ 6.57                      OK    
+ 14                        OK    
+ 50.75                     OK    
+ 31.98                     OK    
+ 33.59                     OK    
+ > 60                      OK    
+ 19                        OK    
+ 14 a 16                   OK    
+ 13.18                     OK    
+ 8.00                      OK    
+ 12.81                     OK    
+ 4.7                       OK    
+ 33.1                      OK    
+ 14:00-22:00 y 10:00-19:00 OK    
+ 1150                      OK    
+ 3 de 3                    OK    
+ -0.0112                   OK    
+ 0.297                     OK    
+ 7.38                      OK    
+ 0.89                      OK    
+ 26.39                     OK    
+ 29.9                      OK    
+ 14253                     OK    
+ 5.10                      OK    
+ 13.7                      OK    
+ 2.13                      OK    
+ 20 de 20                  OK    
+ 98                        OK    
+ 3411                      OK    
+ 3330                      OK    
+ 11.18                     OK    
+ 6.57                      OK    
+ 9.82                      OK    
+ 7.32                      OK    
+ 38.5                      OK    
+ 12.78                     OK    
+ 10.51                     OK    
+ 7.88                      OK    
+ 8.07                      OK    
+ 6.59                      OK    
+ 7.82                      OK    
+ 14                        OK    
+ 33                        OK    
+ 10                        OK    
+ 15.30                     OK    
+ 16.57                     OK    
+ 13.69                     OK    
+ 15.06                     OK    
+ 11.52                     OK    
+ 12.89                     OK    
+ 10.04                     OK    
+ 11.26                     OK    
+ 9.11                      OK    
+ 9.91                      OK    
+ 8.23                      OK    
+ 9.10                      OK    
+ 382                       OK    
+ 410                       OK    
+ 22.0                      OK    
+ 20.5                      OK    
+ 8                         OK    
+ 8                         OK    
+ 12.4                      OK    
+ 28.5                      OK    
+ 427                       OK    
+ 314                       OK    
+ 741                       OK    
+ 73.6                      OK    
+ 76.8                      OK    
+ 81.1                      OK    
+ 31.5                      OK    
+ 24.0                      OK    
+ 80.1                      OK    
+ 67.4                      OK    
+ 76.6                      OK    
+ 9.72                      OK    
+ 10                        OK    
+ 0                         OK    
+ 0                         OK    
+ 13                        OK    
+ 14                        OK    
+ 195                       OK    
+ 1.16                      OK    
+ 21                        OK    
+ 3.91                      OK    
+ 0.08                      OK    
+ 300                       OK    
+ 36.3                      OK    
+ 72.3                      OK    
+ 4.7                       OK    
+ 46.3                      OK    
+ 71.6                      OK    
+ 97.2                      OK    
+ 28.4                      OK    
+ 25.4                      OK    
+ 68.7                      OK    
+ 38.0                      OK    
+ 92.6                      OK    
+ 24.9                      OK    
+ 3 2 1 2 2 5 6             OK    
+ 5                         OK    
+ 48                        OK    
+ 48                        OK    
+ 14.37                     OK    
+ 10.59                     OK    
+ 9.15                      OK    
+ 3                         OK    
+ 5                         OK    
+ 7                         OK    
+ 14.15                     OK    
+ 14.15                     OK    
+ 8.43                      OK    
+ 3ME10101430-M-WHT 8       OK    
+ TB LMMIR 2                OK    
+ 2                         OK    
+ 63                        OK    
+ 97                        OK    
+ 76.9                      OK    
+ 82.3                      OK    
+ 72.1                      OK    
+ 81.1                      OK    
+ 13.93                     OK    
+ 6.29                      OK    
+ 36139                     OK    
+ 1909                      OK    
+ 18.93                     OK    
+ 0.846                     OK    
+ 6915                      OK    
+ 8736                      OK    
+ 165416                    OK    
+ 71136                     OK    
+ 3257                      OK    
+ 4.1                       OK    
+ 5.2                       OK    
+ -401633                   OK    
+ -87840                    OK    
+ 812652                    OK    
+ 1158839                   OK    
+ 21853                     OK    
+ 790799                    OK    
+ -189773                   OK    
+ 101933                    OK    
+ 0                         OK    
+ 29092                     OK    
+ 26796                     OK    
+ 317711                    OK    
+ 349099                    OK    
+ 2                         OK    
+ 38310                     OK    
+ 114898                    OK    
+ 153209                    OK    
+ 64041                     OK    
+ 3064                      OK    
+ 13785                     OK    
+ 5928                      OK    
+ 41265                     OK    
+ 38008                     OK    
+ 12173                     OK    
+ 11212                     OK    
+ 421415                    OK    
+ 1263879                   OK    
+ 704456                    OK    
+ 33706                     OK    
+ 151631                    OK    
+ 65208                     OK    
+ 450655                    OK    
+ 132943                    OK    
+ 459726                    OK    
+ 1378777                   OK    
+ 768498                    OK    
+ 36770                     OK    
+ 236552                    OK    
+ 495176                    OK    
+ 146077                    OK    
+ 349099                    OK    
+ 1.84                      OK    
+ 5.0                       OK    
+ 6.81                      OK    
+ 0.32                      OK    
+ 29                        OK    
+ 0.77                      OK    
+ 24.35                     OK    
+ 27.6                      OK    
+ 6.57                      OK    
+ 6.90                      OK    
+ 3.06                      OK    
+ 0.19                      OK    
+ 0.54                      OK    
+ 0.04                      OK    
+ 5883                      OK    
+ 7.9                       OK    
+ 869281                    OK    
+ 762866                    OK    
+ 698687                    OK    
+ 709360                    OK    
+ 696710                    OK    
+ 480081                    OK    
+ 508247                    OK    
+ 5.1                       OK    
+ -1217                     OK    
+ -95711                    OK    
+
+445 de 445 valores coinciden con el documento.
+
+Ejecutado con R version 4.3.3 (2024-02-29) | fixest 0.14.2 
